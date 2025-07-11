@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% block title%}|ikSaan.com-The AI Learning Hub{% endblock %}
+{% block description %}
+Welcome to ikSaan.com the AI Learning Hub, your gateway to the fascinating world of artificial intelligence. Whether you’re a complete beginner or someone with a bit of experience, our site is designed to guide you through the vast landscape of AI. From understanding fundamental concepts to exploring cutting-edge technologies, we provide the resources you need to dive deep into AI and machine learning
+{% endblock %}
+{% load static %}
+{% block main %}
+{% load content_filters %}
+<section class="section dashboard">
+  <div class="row">
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <h5 class="card-title">Recent Articles <span>| Today</span></h5>
+              <div class="row row-cols-1 row-cols-md-1 g-1">
+                {% for article in articles %}
+                {% if article.is_approved %}
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <a href="{% url 'article_detail' article.slug %}">
+                      <h5 class="card-title">{{ article.title }}</span></h5>
+                      </a>
+                    </div>              
+                    
+                    <img src="/media/{{ article.thumbnail}}" class="img-thumbnail rounded float-start"
+                      alt="{{ article.title }}" />
+                    <div class="card-body">
+                      <hr>
+                      <p class="card-text">
+                        {{ article.content|truncate_words:50|safe }}
+                      </p>
+                      <a href="{% url 'article_detail' article.slug %}">Read More</a>
+                    </div>
+                    <div class="card-footer">Footer
+                      <div class="row"><!--author--><!--publication_time-->
+                        <div class="col-6">
+                          <p class="text-start"><strong>Author:</strong> {{ article.author }}</p>
+                        </div>
+                        <div class="col-6"> 
+                          <p class="text-end"><strong>Published:</strong> {{ article.created_at }}</p>
+                        </div>
+                      </div>                 
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div><!-- End Recent Sales -->
+      </div>
+    </div><!-- End Left side columns -->
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+
+
+      <div class="card">
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+    
+          <div id="aiPieChart" style="min-height: 500px;" class="echart"></div>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              new ApexCharts(document.querySelector("#aiPieChart"), {
+                series: [40, 30, 15, 10, 5],
+                labels: ["Natural Language Processing (NLP)", "Computer Vision", "Robotic Process Automation (RPA)", "Machine Learning Operations (MLOps)", "Other AI Domains"],
+                chart: {
+                  type: 'pie',
+                  height: 350
+                },
+                colors: ['#4154f1', '#2eca6a', '#ff771d', '#e83e8c', '#6c757d'], // Colors for each segment
+                dataLabels: {
+                  enabled: false,
+                  formatter: (val, opts) => `${opts.w.globals.labels[opts.seriesIndex]}: ${val}%`
+                },
+                tooltip: {
+                  y: {
+                    formatter: (val) => `${val}%`
+                  }
+                },
+                legend: {
+                  position: 'top',  
+                  horizontalAlign: 'left',
+                  offsetX: 0  // Adjust as needed                      
+                }
+              }).render();
+            });
+          </script>
+    
+        </div>
+      </div><!-- End AI market trends by domains --> 
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">AI Domain Market Trend <span>| Today</span></h5>
+    
+          <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+    
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              echarts.init(document.querySelector("#trafficChart")).setOption({
+                tooltip: {
+                  trigger: 'item'
+                },
+                legend: {
+                  top: '5%',
+                  left: 'center'
+                },
+                series: [{
+                  name: 'AI Market Trend',
+                  type: 'pie',
+                  radius: ['40%', '70%'],
+                  avoidLabelOverlap: false,
+                  label: {
+                    show: false,
+                    position: 'center'
+                  },
+                  emphasis: {
+                    label: {
+                      show: true,
+                      fontSize: '18',
+                      fontWeight: 'bold'
+                    }
+                  },
+                  labelLine: {
+                    show: false
+                  },
+                  data: [{
+                      "value": 1500,
+                      "name": "Healthcare"
+                    },
+                    {
+                      "value": 1300,
+                      "name": "Finance"
+                    },
+                    {
+                      "value": 1100,
+                      "name": "Retail"
+                    },
+                    {
+                      "value": 900,
+                      "name": "Automotive"
+                    },
+                    {
+                      "value": 800,
+                      "name": "Manufacturing"
+                    },
+                    {
+                      "value": 700,
+                      "name": "Telecommunications"
+                    },
+                    {
+                      "value": 600,
+                      "name": "Education"
+                    },
+                    {
+                      "value": 500,
+                      "name": "Energy"
+                    }
+                  ]
+                }]
+              });
+            });
+    
+          </script>
+    
+        </div>
+      </div><!-- End AI market trends by Business domains -->
+      <!-- News & Updates Traffic -->
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+          <div class="news">
+            {% for t_article in t_articles %}
+            {% if t_article.is_approved %}
+            <div class="post-item clearfix">
+              <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+              <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+              <p>{{ article.excerpt }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div><!-- End sidebar recent posts-->
+
+        </div>
+      </div><!-- End News & Updates -->
+
+
+
+
+
+
+
+<!---####################-->
+<div class="card">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1877627363010029"
+  crossorigin="anonymous"></script>
+  <!-- ikad01 -->
+  <ins class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-1877627363010029"
+  data-ad-slot="8569300988"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<!--#####################-->
+
+    </div><!-- End Right side columns -->
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var contentDiv = document.getElementById('content');
+      var maxWords = 50;
+      var words = contentDiv.innerText.split(/\s+/);
+      if (words.length > maxWords) {
+          contentDiv.innerText = words.slice(0, maxWords).join(' ') + '...';
+      }
+  });
+  </script>
+
+        <!-- ############# Chart Script ###################-->
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            // LinkedIn Job Trends
+            new ApexCharts(document.querySelector("#linkedinChart"), {     
+              series: [{
+                data: [30, 25, 15, 10, 20]
+              }],
+              title: {
+                text: 'LinkedIn Job Trends',
+                align: 'left'
+              },
+              chart: {
+                type: 'bar',
+                height: 180
+              },
+              plotOptions: {
+                bar: {
+                  borderRadius: 4,
+                  horizontal: true,
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              xaxis: {
+                categories: ["Software Engineers", "Data Scientists", "Cybersecurity Experts", "Cloud Engineers", "Other"],
+              },
+              colors: ['#4154f1'], // Color for LinkedIn chart
+            }).render();
+      
+            // Glassdoor Job Trends
+            new ApexCharts(document.querySelector("#glassdoorChart"), {
+              series: [{
+                data: [35, 20, 15, 10, 20]
+              }],
+              title: {
+                text: 'Glassdoor Job Trends',
+                align: 'left'
+              },
+              chart: {
+                type: 'bar',
+                height: 180
+              },
+              plotOptions: {
+                bar: {
+                  borderRadius: 4,
+                  horizontal: true,
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              xaxis: {
+                categories: ["Software Developers", "Data Analysts", "Web Developers", "Cybersecurity Analysts", "Other"],
+              },
+              colors: ['#2eca6a'], // Color for Glassdoor chart
+            }).render();
+      
+            // Indeed Job Trends
+            new ApexCharts(document.querySelector("#indeedChart"), {
+              series: [{
+                data: [40, 20, 15, 10, 15]
+              }],
+
+              chart: {
+                type: 'bar',
+                height: 180
+              },
+              plotOptions: {
+                bar: {
+                  borderRadius: 4,
+                  horizontal: true,
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              xaxis: {
+                categories: ["Software Engineers", "Data Scientists", "Web Developers", "Cloud Specialists", "Other"],
+              },
+              title: {
+                text: 'Indeed Job Trends',
+                align: 'left'
+              },
+              colors: ['#ff771d'], // Color for Indeed chart
+            }).render();
+          });
+      
+        </script>
+      
+        <!-- ############# End Chart Script ###################-->   
+{% endblock %}

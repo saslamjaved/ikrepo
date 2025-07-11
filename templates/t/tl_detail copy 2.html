@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{%block title%}About us |ikSaan.com-The AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+
+
+<section class="section dashboard">
+    <aside id="sidebar" class="sidebar">
+        <ul>
+            {% for chapter in chapters %}
+                <li class="list-group-item list-group-item-action px-3 border-0 rounded mb-2 list-group-item-warning">
+                    <a href="?chapter={{ chapter.slug }}" class="chapter-link" data-chapter-slug="{{ chapter.slug }}">
+                       <b> {{ chapter.title }}</b>
+                    </a>
+                    <hr>
+                    {% if selected_chapter and selected_chapter.slug == chapter.slug %}
+                        <ul>
+                            {% for lesson in lessons %}
+                                <li class="list-group-item list-group-small list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-success">
+                                    <span class="badge badge-danger text-black rounded-pill">{{ lesson.order }}</span>
+                                    <a href="?chapter={{ selected_chapter.slug }}&lesson={{ lesson.slug }}" 
+                                       class="lesson-link"
+                                       data-chapter-slug="{{ selected_chapter.slug }}" 
+                                       data-lesson-slug="{{ lesson.slug }}">
+                                        {{ lesson.title }}
+                                        
+                                    </a>
+                                    
+                                </li>
+                                <hr>
+                            {% empty %}
+                                <li>No lessons available for this chapter.</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>No chapters available.</li>
+            {% endfor %}
+        </ul>
+    </aside>
+    <div class="row">
+      <!-- Left side columns -->
+        <!-- Reports -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    
+                        <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                        <div class="container-fluid">
+                        <a class="navbar-brand" href="javascript:void(0)" >{{chapter_title}}</a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0)">Link</a>
+                            </li>
+
+                            </ul>
+                            <form class="d-flex">
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button class="btn btn-primary" type="button">Search</button>
+                            </form>
+                        </div>
+                        </div>
+                        </nav>
+                        <div class="progress mt-3">
+                            <div class="progress-bar bg-info" id="progress-bar-fill">0%</div>
+                        </div>
+                        <div class="lesson-content"></div>
+                </div>
+            </div>
+        </div><!-- End Reports -->
+    </div><!-- End Left side columns -->
+    
+
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBarFill = document.getElementById('progress-bar-fill');
+
+
+    document.querySelectorAll('.lesson-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            var chapterSlug = this.dataset.chapterSlug;
+            var lessonSlug = this.dataset.lessonSlug;
+
+            // Construct the URL for the AJAX request
+            var url = new URL(window.location.href);
+            url.searchParams.set('chapter', chapterSlug);
+            url.searchParams.set('lesson', lessonSlug);
+
+            // Send AJAX request to fetch lesson content
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url.toString(), true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    document.querySelector('.lesson-content').innerHTML = `
+
+                        <p>${data.content}</p>
+                    `;
+                    
+                    // Update the progress bar
+                    var completedPercentage = data.completed_percentage || 0;
+                    progressBarFill.style.width = completedPercentage + '%';
+                    progressBarFill.textContent = completedPercentage.toFixed(2) + '%';
+
+                    // Mark the lesson as complete
+                    var markCompleteUrl = new URL(window.location.href);
+                    markCompleteUrl.searchParams.set('chapter', chapterSlug);
+                    markCompleteUrl.searchParams.set('lesson', lessonSlug);
+                    markCompleteUrl.searchParams.set('mark_complete', 'true');
+                    markCompleteUrl.searchParams.set('progress_percentage', '100'); // Assuming 100% completion
+
+                    var markCompleteXhr = new XMLHttpRequest();
+                    markCompleteXhr.open('GET', markCompleteUrl.toString(), true);
+                    markCompleteXhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                    markCompleteXhr.send();
+
+                    // Handle the next lesson
+                    if (data.next_lesson) {
+                        var nextLessonLink = document.createElement('a');
+                        nextLessonLink.href = `?chapter=${chapterSlug}&lesson=${data.next_lesson.slug}`;
+                        nextLessonLink.textContent = `Next: ${data.next_lesson.title}`;
+                        document.querySelector('.next-lesson').innerHTML = '';
+                        document.querySelector('.next-lesson').appendChild(nextLessonLink);
+                    }
+                } else {
+                    console.error('Error loading lesson content.');
+                }
+            };
+            xhr.send();
+        });
+    });
+});
+</script>
+
+{% endblock %}

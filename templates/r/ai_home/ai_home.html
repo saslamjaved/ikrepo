@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+
+{% block title%}Introduction to AI - ikSaan.com- The AI Learning Hub{% endblock %}
+{% block description %}
+Welcome to ikSaan.com the AI Learning Hub, your gateway to the fascinating world of artificial intelligence. Whether you’re a complete beginner or someone with a bit of experience, our site is designed to guide you through the vast landscape of AI. From understanding fundamental concepts to exploring cutting-edge technologies, we provide the resources you need to dive deep into AI and machine learning
+{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Introduction to AI | AI Learning Hub</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+ <section class="section dashboard">
+  <div class="row">
+    <main>
+      <div class="mt-4 p-5 bg-primary-subtle rounded">
+        <h2 class="mb-1 ">Welcome to ikSaan.com</h2>
+        <p class="mb-1">The AI Learning Hub</p>
+        <p class="mt-4">Discover the World of Artificial Intelligence
+
+          Welcome to the AI Learning Hub, your gateway to the fascinating world of artificial intelligence. Whether you’re a complete beginner or someone with a bit of experience, our site is designed to guide you through the vast landscape of AI. From understanding fundamental concepts to exploring cutting-edge technologies, we provide the resources you need to dive deep into AI and machine learning.</p>
+      </div>      
+    
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/img/AI_home_01.avif' %}" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+            <div class="card-body">
+              <h5 class="card-title">Comprehensive Learning Resources</h5>
+              <ul class="card-text">
+                <li> Content: Our tutorials, articles, and guides are tailored to help beginners grasp complex AI concepts with ease. We start with the basics and build up to more advanced topics.</li>
+                <li>Hands-On Projects: Gain practical experience through a variety of AI projects that help you apply what you’ve learned in real-world scenarios.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/img/AI_home_02.png' %}" class="card-img-top" alt="Palm Springs Road"/>
+            <div class="card-body">
+              <h5 class="card-title">Cutting-Edge Research and Insights</h5>
+              <ul class="card-text">
+                <li>
+                  Latest Trends: Stay updated with the latest advancements and research in AI through our curated blog posts and news updates.
+                </li>
+                <li>
+                  Expert Opinions: Learn from leading AI experts and researchers as they share their insights and findings
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/img/AI_home_03.png' %}" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+            <div class="card-body">
+              <h5 class="card-title">Interactive Community</h5>
+              <ul class="card-text">
+                <li>
+                  Forums and Discussions: Join our vibrant community of AI enthusiasts and professionals. Engage in discussions, ask questions, and collaborate on projects.
+                </li>
+                
+                <Li>
+                  Events and Webinars: Participate in live events and webinars to learn from industry leaders and network with other AI learners.
+                </Li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->   
+    
+        <!-- START THE FEATURETTES -->
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette bg-primary-subtle rounded-3">
+          <div class="col-md-7">
+            <h2 class="featurette-heading m-2">Explore Our Key Sections</h2>
+              <ul class="lead">
+              <li>Introduction to AI: Get started with the basics of artificial intelligence. Our introductory guides and videos cover essential topics and terminologies.</li>
+              <li>AI Algorithms and Techniques: Dive deeper into machine learning algorithms, neural networks, and data science methods.</li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <img src="{% static 'assets/img/AI_home_04.jpg' %}" class="card-img-top rounded-4" alt="Los Angeles Skyscrapers"/>
+    
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette bg-success-subtle rounded-3">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading m-2">AI Projects </h2>
+            <ul class="lead">
+              <li>Beginner Projects: Start with simple projects to build your skills and confidence. From basic classification tasks to simple neural networks, we’ve got you covered.</li>
+              <li>Advanced Projects: Challenge yourself with more complex projects that require a deeper understanding of AI concepts.</li>
+            </ul>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="{% static 'assets/img/AI_home_05.png' %}" class="card-img-top rounded-4" alt="Los Angeles Skyscrapers"/>
+    
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette bg-danger-subtle rounded-3">
+          <div class="col-md-7">
+            <h2 class="featurette-heading m-2">Resources</h2>
+            <ul class="lead">
+              <li>Free Tools and Libraries: Explore a range of free tools and libraries for AI development, including TensorFlow, Keras, and Scikit-Learn.</li>
+              <li>Research Papers and Articles: Access a library of research papers and articles to keep up with the latest developments in AI.</li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <img src="{% static 'assets/img/AI_home_06.jpg' %}" class="card-img-top rounded-4" alt="Los Angeles Skyscrapers"/>
+    
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- /END THE FEATURETTES -->
+    
+      </div><!-- /.container -->
+    </main>  
+  </div>
+</section>
+{% endblock %}

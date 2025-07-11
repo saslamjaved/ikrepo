@@ -1,0 +1,28 @@
+<ul data-chapter-slug="{{ selected_chapter.slug }}">
+    {% for lesson in lessons %}
+        <li class="list-group-item">
+            <a href="?chapter={{ selected_chapter.slug }}&lesson={{ lesson.slug }}" class="lesson-link">
+                <span class="badge bg-primary">{{ lesson.order }}</span> {{ lesson.title }}
+            </a>
+        </li>
+    {% empty %}
+        <li>No lessons available for this chapter.</li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination controls -->
+<div class="pagination">
+    <span class="step-links">
+        {% if lessons.has_previous %}
+            <a href="?chapter={{ selected_chapter.slug }}&page={{ lessons.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ lessons.number }} of {{ lessons.paginator.num_pages }}.
+        </span>
+
+        {% if lessons.has_next %}
+            <a href="?chapter={{ selected_chapter.slug }}&page={{ lessons.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>

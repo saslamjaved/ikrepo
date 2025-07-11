@@ -1,0 +1,26 @@
+# Allow all web crawlers access to everything
+User-agent: *
+Disallow:
+
+# Block specific web crawlers from accessing specific parts of the site
+User-agent: Googlebot
+Disallow: /private/
+
+User-agent: Bingbot
+Disallow: /temporary/
+
+# Allow a specific crawler to access everything
+User-agent: Yahoo! Slurp
+Disallow:
+
+# Block all web crawlers from accessing certain directories
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /user/
+
+# Sitemap location
+Sitemap: https://www.yourwebsite.com/sitemap.xml
+
+User-agent: *
+Disallow: /cdn-cgi/

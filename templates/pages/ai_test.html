@@ -1,0 +1,114 @@
+
+{% extends 'base.html' %}
+{%block title%}Python |ikSaan.com-The AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <section class="section dashboard">
+    <div class="row">
+      <!-- Left side columns -->
+      <div class="col-lg-12">
+        <div class="row">
+          <!-- Reports -->
+          <div class="col-12">
+            <div class="card rounded">
+              <div class="card-body">
+                <div class="container  border p-2 bd-highlight">
+                    <div class="row text-center m-2">
+                        <div class="col-sm-2 p-3 rounded bg-danger text-white "><strong><h1><b><div class="order" id="order">{{ lessons.0.order }}</div></b></h1></strong></div>
+                        <div class="col-sm-6 p-3 bg-white text-danger"><strong><h1><b><div class="counter" id="counter">{{ lessons.0.title }}</div></b></h1></strong></div>
+                        <div class="col-sm-4 p-3 rounded ">Course : {{chapter.resource.title}}<br>Capter: {{ chapter.title }}</div>
+                        <hr class="text-danger" >
+                    </div>
+                    <div class="row m-2">
+                      <div class="content" id="content">{{ lessons.0.content|safe }}</div>               
+                       
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-2 text-start">
+                        
+                        
+                            <button class="btn btn-danger text-white" onclick="decrease()">Previous</button>
+                          
+                          
+                        </div>
+                        <div class="col-8"><stron><h2><b></b></h2></strong></div>
+                        <div class="col-2 text-end">
+                          
+                              <button class="btn btn-danger text-white" onclick="increase()">Next</button>
+                          
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div><!-- End Reports -->
+        </div>
+      </div><!-- End Left side columns -->
+    </div>
+  </section>
+  
+  
+  
+  
+<!--####################-->
+
+<script>
+  let count = 0;
+  const lessons = [];
+
+  {% for lesson in lessons %}
+      lessons.push({ 
+          title: '{{ lesson.title|escapejs }}', 
+          content: '{{ lesson.content|escapejs }}', 
+          order: '{{ lesson.order }}' 
+      });
+  {% endfor %}
+
+  const maxCount = lessons.length - 1; // Set the maximum index
+
+  function updateCounter() {
+      if (lessons.length > 0) { // Ensure there are lessons
+          document.getElementById('counter').textContent = lessons[count].title;
+          document.getElementById('order').textContent = `${lessons[count].order}`; // Display the order value
+          document.getElementById('content').innerHTML = lessons[count].content; // Use innerHTML to display safe content
+          //document.getElementById('content').textContent = lessons[count].content;
+      }
+  }
+
+  function increase() {
+      count = (count + 1) % (maxCount + 1); // Wrap around
+      updateCounter();
+  }
+
+  function decrease() {
+      count = (count - 1 + (maxCount + 1)) % (maxCount + 1); // Wrap around
+      updateCounter();
+  }
+
+  // Initialize display
+  updateCounter();
+</script>
+
+<!--####################-->  
+
+
+  {% endblock %}
+
+
+
+
+
+
+
+

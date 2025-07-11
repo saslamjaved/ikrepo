@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+{%block title%}AI Projects{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <h1>Contact</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">AI Projects</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+<section class="section dashboard"></section>
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+
+<!-- Page Start -->
+    <!-- AI Projects Section -->
+    <section id="projects" class="container">
+      <h2 class="section-header">AI Projects</h2>
+      <div class="project-list">
+          <!-- Project 1: Predicting Housing Prices -->
+          <div class="mb-4">
+              <h3>1. Predicting Housing Prices</h3>
+              <p><strong>Objective:</strong> Predict the price of a house based on various features.</p>
+              <p><strong>Skills Covered:</strong> Regression algorithms, Data preprocessing and feature selection</p>
+              <p><strong>Tools/Libraries:</strong> Python, Scikit-Learn, Pandas, Matplotlib</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use a dataset like the Boston Housing dataset.</li>
+                  <li><strong>Preprocessing:</strong> Clean the data, handle missing values, and normalize features.</li>
+                  <li><strong>Modeling:</strong> Implement linear regression or decision trees.</li>
+                  <li><strong>Evaluation:</strong> Use metrics such as Mean Squared Error (MSE).</li>
+              </ul>
+          </div>
+
+          <!-- Project 2: Sentiment Analysis of Tweets -->
+          <div class="mb-4">
+              <h3>2. Sentiment Analysis of Tweets</h3>
+              <p><strong>Objective:</strong> Analyze the sentiment of tweets.</p>
+              <p><strong>Skills Covered:</strong> Natural Language Processing (NLP), Text classification</p>
+              <p><strong>Tools/Libraries:</strong> Python, NLTK or SpaCy, Scikit-Learn, Pandas</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Collect tweets using the Twitter API or use a pre-existing dataset.</li>
+                  <li><strong>Preprocessing:</strong> Tokenize text, remove stop words, and perform text normalization.</li>
+                  <li><strong>Modeling:</strong> Use algorithms like Naive Bayes or Logistic Regression for sentiment classification.</li>
+                  <li><strong>Evaluation:</strong> Evaluate the model using metrics like accuracy, precision, recall, and F1-score.</li>
+              </ul>
+          </div>
+
+          <!-- Project 3: Image Classification -->
+          <div class="mb-4">
+              <h3>3. Image Classification</h3>
+              <p><strong>Objective:</strong> Classify images into predefined categories.</p>
+              <p><strong>Skills Covered:</strong> Convolutional Neural Networks (CNNs), Image preprocessing</p>
+              <p><strong>Tools/Libraries:</strong> Python, TensorFlow/Keras or PyTorch, OpenCV</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use datasets like CIFAR-10 or MNIST.</li>
+                  <li><strong>Preprocessing:</strong> Resize and normalize images.</li>
+                  <li><strong>Modeling:</strong> Build and train a simple CNN.</li>
+                  <li><strong>Evaluation:</strong> Assess model performance using metrics such as accuracy.</li>
+              </ul>
+          </div>
+
+          <!-- Project 4: Chatbot Development -->
+          <div class="mb-4">
+              <h3>4. Chatbot Development</h3>
+              <p><strong>Objective:</strong> Create a basic chatbot that can answer simple questions.</p>
+              <p><strong>Skills Covered:</strong> NLP, Dialog systems</p>
+              <p><strong>Tools/Libraries:</strong> Python, NLTK or SpaCy, Flask (for web interface)</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Intent Recognition:</strong> Define a set of intents and responses.</li>
+                  <li><strong>Modeling:</strong> Use a simple rule-based approach or implement a basic NLP model to understand user queries.</li>
+                  <li><strong>Integration:</strong> Build a simple web interface using Flask to interact with the chatbot.</li>
+              </ul>
+          </div>
+
+          <!-- Project 5: Recommendation System -->
+          <div class="mb-4">
+              <h3>5. Recommendation System</h3>
+              <p><strong>Objective:</strong> Build a recommendation system to suggest items based on user preferences.</p>
+              <p><strong>Skills Covered:</strong> Collaborative filtering, Content-based filtering</p>
+              <p><strong>Tools/Libraries:</strong> Python, Scikit-Learn, Pandas, NumPy</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use datasets like MovieLens.</li>
+                  <li><strong>Modeling:</strong> Implement collaborative filtering or content-based filtering.</li>
+                  <li><strong>Evaluation:</strong> Evaluate the system using metrics such as precision and recall.</li>
+              </ul>
+          </div>
+
+          <!-- Project 6: Handwritten Digit Recognition -->
+          <div class="mb-4">
+              <h3>6. Handwritten Digit Recognition</h3>
+              <p><strong>Objective:</strong> Recognize handwritten digits (0-9) from images.</p>
+              <p><strong>Skills Covered:</strong> Image classification, Neural networks</p>
+              <p><strong>Tools/Libraries:</strong> Python, TensorFlow/Keras or PyTorch, Scikit-Learn</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use the MNIST dataset.</li>
+                  <li><strong>Preprocessing:</strong> Normalize the images and split the dataset.</li>
+                  <li><strong>Modeling:</strong> Build a neural network or a CNN for digit classification.</li>
+                  <li><strong>Evaluation:</strong> Test the model’s accuracy and performance on the test set.</li>
+              </ul>
+          </div>
+
+          <!-- Project 7: Stock Price Prediction -->
+          <div class="mb-4">
+              <h3>7. Stock Price Prediction</h3>
+              <p><strong>Objective:</strong> Predict future stock prices based on historical data.</p>
+              <p><strong>Skills Covered:</strong> Time series analysis, Regression algorithms</p>
+              <p><strong>Tools/Libraries:</strong> Python, Pandas, Scikit-Learn, TensorFlow/Keras</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use historical stock price data.</li>
+                  <li><strong>Preprocessing:</strong> Normalize data and create time series features.</li>
+                  <li><strong>Modeling:</strong> Implement models such as Linear Regression, ARIMA, or LSTM.</li>
+                  <li><strong>Evaluation:</strong> Evaluate the model’s performance using metrics like RMSE.</li>
+              </ul>
+          </div>
+
+          <!-- Project 8: Face Detection -->
+          <div class="mb-4">
+              <h3>8. Face Detection</h3>
+              <p><strong>Objective:</strong> Detect faces in images using computer vision techniques.</p>
+              <p><strong>Skills Covered:</strong> Object detection, Computer vision</p>
+              <p><strong>Tools/Libraries:</strong> Python, OpenCV, Haar cascades or pre-trained models (e.g., YOLO)</p>
+              <p><strong>Steps:</strong></p>
+              <ul>
+                  <li><strong>Dataset:</strong> Use a dataset with images containing faces.</li>
+                  <li><strong>Preprocessing:</strong> Prepare images for detection.</li>
+                  <li><strong>Modeling:</strong> Implement face detection using Haar cascades or a pre-trained model.</li>
+                  <li><strong>Evaluation:</strong> Check detection accuracy and refine the model as needed.</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+ <!-- Page End -->
+  <!-- ################# Page Ends ##################-->                       
+</div>
+</div>
+</div>
+</div>
+<!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+</div>
+</section>
+ {% endblock %}

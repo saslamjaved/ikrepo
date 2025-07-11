@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/static/assets/css/Chatroom.css" />
+    <title>ikChat</title>
+</head>
+<body>
+        <div class="chat-container"></div>
+      
+      
+        <script type="text/javascript">
+          <script src="/static/assets/js/Chatroom.js"></script>
+          var chatroom = new window.Chatroom({
+            host: "http://localhost:5005",
+            title: "Chat with Mike",
+            container: document.querySelector(".chat-container"),
+            welcomeMessage: "Hi, I am Mike. How may I help you?",
+            speechRecognition: "en-US",
+            voiceLang: "en-US"
+          });
+          chatroom.openChat();
+        </script>
+</body>
+</html>

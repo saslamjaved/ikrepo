@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}ikSaan.com - The AI learning HUB {% endblock %}</title>
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="{% block description %}ikSaan.com is a leader in digital learning, offering cutting-edge courses in Artificial Intelligence (AI), Data Science, and Robotics. Our mission is to empower individuals with practical skills and knowledge through expert-led courses, hands-on projects, and flexible learning options. Stay ahead with our up-to-date content and bridge the gap between academic learning and real-world application.{% endblock %}">
+        <meta name="keywords" content="ikSaan.com,Artificial Intelligence Courses,AI Training Programs,Data Science Education,Robotics Learning Resources,Online AI Courses,Data Science Certification,Robotics Training Online,Hands-On AI Projects,Expert-Led Data Science Classes,Flexible Learning for AI,Cutting-Edge Robotics Courses,Practical Skills in AI,Advanced Data Science Techniques,Robotics and AI Education,Digital Learning in AI and Robotics,AI and Data Science Career Skills,Interactive Robotics Learning,AI and Robotics Online Courses,Real-World AI Applications,Up-to-Date Data Science Content">
+        <!-- Favicons -->
+        <link href="/static/assets/img/iksaanLogo.png" rel="icon">
+        <link href="/static/assets/img/iksaanLogo.png" rel="apple-touch-icon">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+       
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
+      
+        <!-- Vendor CSS Files -->
+        <!--<link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        
+        <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="/static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+        <link href="/static/assets/css/ikstyle.css" rel="stylesheet">        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        <script src="/static/assets/vendor/quill/quill.js"></script> 
+    
+        <script src="/static/assets/js/ikmain.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>         -->
+        <!--<script src="https://cdn.tailwindcss.com"></script> For chat module -->
+        <!-- Template Main CSS File -->
+        <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+        <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="/static/assets/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ikstyle.css' %}">
+        <link href="/static/assets/css/ikstyle.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/assets/scss/Chatroom.scss" />
+        <script src="/static/assets/js/Chatroom.js"></script>
+        <style>
+            body {
+                padding-top: 20px;
+            }
+            .repository-item {
+                margin-bottom: 20px;
+            }
+            .repository-title {
+                font-weight: bold;
+            }
+            /* Disable text selection */
+            .no-copy {
+                user-select: none; /* Standard syntax */
+                -webkit-user-select: none; /* Safari */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+            }
+        </style>
+        
+        <!-- =======================================================
+        * Template Name: NiceAdmin - v2.5.0
+        * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1877627363010029"
+    crossorigin="anonymous"></script>         
+</head>
+
+<body class=".no-copy">
+
+{% include 'dashboard/components/topbar.html' %}
+{% include 'dashboard/components/sidebar.html' %}
+<main id="main" class="main">
+  <section class="section dashboard">
+      <div class="row">
+  <!-- ======= main ======= -->
+  {% block main %}
+  {% endblock %}
+  <!-- End #main -->
+      </div>
+  </section>
+</main>
+{% include 'dashboard/components/footer.html' %}
+</body>
+</html>

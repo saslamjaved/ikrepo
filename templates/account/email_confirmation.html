@@ -1,0 +1,12 @@
+
+Hello {{ name }},
+
+Thank you for registering with us! To complete your registration, please activate your account by clicking the button below:
+        
+http://{{ domain }}{% url 'users:activate' uidb64=uid token=token %}
+
+If you didn’t register for this account, please ignore this email.
+    
+Best regards,
+ikSaan.com Team
+

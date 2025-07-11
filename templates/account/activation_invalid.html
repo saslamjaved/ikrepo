@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+        <div class="d-flex justify-content-center py-4">
+          <a href="{% url 'home' %}" class="logo d-flex align-items-center w-auto">
+            <strong><span class="d-none d-lg-block" style="color:tomato;">ikSaan.com</span></strong>
+          </a>
+        </div><!-- End Logo -->
+
+        <div class="card mb-3">
+
+          <div class="card-body">
+
+
+
+    <div class="container mt-5">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Activation Failed</h4>
+            <p>Sorry, the activation link you followed is either invalid or has expired. Please make sure you have clicked the correct link or request a new activation link if necessary.</p>
+            <hr>
+            <p class="mb-0">If you need further assistance, please contact our support team.</p>
+        </div>
+        <a href="{% url 'account:register' %}" class="btn btn-primary mt-3">Return to Registration</a>
+    </div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

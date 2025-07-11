@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+{% load content_filters %}
+<section class="section dashboard">
+  <div class="row">
+    {% for article in articles %}
+    
+    {% endfor %}
+  </div>
+    <div class="row">
+      
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+          <!-- Recent Sales -->
+          <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+              <div class="card-body">
+                {% for article in articles %}
+                <div class="row border">
+                  <div class="row">
+                    <div class="col-6"><!--Image-->
+                      <img src="/media/{{ article.thumbnail }}"  class="img-thumbnail rounded float-start mt-2 " alt="{{ article.title }}">
+                    </div>
+                    <div class="col-6"><!--title-->
+                      <div class="row">
+                        <div class="row post-item clearfix"><!--URL link-->
+                          <p class="card-title"><a href="#">{{ article.title }}</a></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                      </div>
+                      <div class="row">
+                      </div>                      
+                    </div>
+                  </div>
+                  <div class="row"> 
+                    <div class="col-12 p-2"><!--excerpt-->
+                      <p class="card-body text-start">{{ article.content|truncate_words:10  }}</p>
+                      <a href="{% url 'article_detail' article.slug %}">Read More</a>
+                    </div>
+                  </div>
+                  <div class="row"><!--author--><!--publication_time-->
+                    <div class="col-6">
+                      <p class="text-start"><strong>Author:</strong> {{ article.author }}</p>
+                    </div>
+                    <div class="col-6"> 
+                      <p class="text-end"><strong>Published:</strong> {{ article.created_at }}</p>
+                    </div>
+                  </div> 
+                </div>
+                {% endfor %}                
+              </div>
+            </div>
+          </div><!-- End Recent Sales -->
+        </div>
+      </div><!-- End Left side columns -->
+
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+
+        <div class="card">
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li><a class="dropdown-item" href="#">Today</a></li>
+              <li><a class="dropdown-item" href="#">This Month</a></li>
+              <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+            <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                echarts.init(document.querySelector("#trafficChart")).setOption({
+                  tooltip: {
+                    trigger: 'item'
+                  },
+                  legend: {
+                    top: '5%',
+                    left: 'center'
+                  },
+                  series: [{
+                    name: 'AI Market Trend',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                      show: false,
+                      position: 'center'
+                    },
+                    emphasis: {
+                      label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                      }
+                    },
+                    labelLine: {
+                      show: false
+                    },
+                    data: [{
+                        "value": 1500,
+                        "name": "Healthcare"
+                      },
+                      {
+                        "value": 1300,
+                        "name": "Finance"
+                      },
+                      {
+                        "value": 1100,
+                        "name": "Retail"
+                      },
+                      {
+                        "value": 900,
+                        "name": "Automotive"
+                      },
+                      {
+                        "value": 800,
+                        "name": "Manufacturing"
+                      },
+                      {
+                        "value": 700,
+                        "name": "Telecommunications"
+                      },
+                      {
+                        "value": 600,
+                        "name": "Education"
+                      },
+                      {
+                        "value": 500,
+                        "name": "Energy"
+                      }
+                    ]
+                  }]
+                });
+              });
+
+            </script>
+
+          </div>
+        </div><!-- End Website Traffic -->        
+        <!-- News & Updates Traffic -->
+        <div class="card">
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li><a class="dropdown-item" href="#">Today</a></li>
+              <li><a class="dropdown-item" href="#">This Month</a></li>
+              <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+            <div class="news">
+              {% for t_article in t_articles %}
+              <div class="post-item clearfix">
+                <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+                <h4><a href="#">{{ t_article.title }}</a></h4>
+                <p>{{ article.excerpt }}</p>
+              </div>
+              {% endfor %}
+            </div><!-- End sidebar recent posts-->
+
+          </div>
+        </div><!-- End News & Updates -->
+
+      </div><!-- End Right side columns -->
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,17 @@
+Python for Beginners and High school Students
+
+Simplicity and Readability
+Versatility
+Large Community and Libraries
+
+Basic Concepts
+Functions and Modules
+Data Structures
+Object-Oriented Programming
+Practical Projects
+
+Content
+What is Programming?
+Introduction to Python
+Setting Up the Environment
+Your First Python Program:

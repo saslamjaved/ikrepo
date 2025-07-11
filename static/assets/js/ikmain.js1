@@ -1,0 +1,65 @@
+$(document).ready(function(){
+    $('#action_menu_btn').click(function(){
+        $('.action_menu').toggle();
+    });
+        });
+
+
+
+
+
+
+    // URL of the PDF (replace with actual path)
+    const pdfUrl = '/media/pdfs/101.pdf';  // Replace with your actual PDF file path
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+    // Fetch the iframe dimensions (use window dimensions if no iframe)
+    const iframeWidth = window.innerWidth;
+    const iframeHeight = window.innerHeight;
+
+    // Fetch the PDF document
+    pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+        // Loop through all pages of the PDF
+        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+            pdf.getPage(pageNumber).then(function(page) {
+                // Set the scale and viewport
+                const scale = 1;  // Base scale; adjust this if necessary
+                const viewport = page.getViewport({scale: scale});
+
+                // Create a canvas element for each page
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+
+                // Calculate the aspect ratio and fit canvas to window
+                const aspectRatio = viewport.width / viewport.height;
+                canvas.width = iframeWidth < viewport.width ? iframeWidth : viewport.width;
+                canvas.height = canvas.width / aspectRatio;
+
+                // Render the PDF page into the canvas
+                page.render({
+                    canvasContext: context,
+                    viewport: page.getViewport({scale: canvas.width / viewport.width})
+                }).promise.then(function() {
+                    // Create a carousel item
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = pageNumber === 1 ? 'carousel-item active' : 'carousel-item';
+
+                    // Append the canvas to the carousel item
+                    carouselItem.appendChild(canvas);
+                    document.getElementById('carouselInner').appendChild(carouselItem);
+                });
+            });
+        }
+    });
+
+    @media (max-width: 768px) {
+        #pdfCarousel {
+            width: 100% !important;
+            height: auto !important;
+        }
+    
+        .carousel-inner canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }

@@ -1,0 +1,110 @@
+<!-- templates/gold_content.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Content - Exclusive Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gold-header {
+            background-color: #ffd700; /* Gold color */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .gold-badge {
+            display: inline-block;
+            background-color: #ffc107;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .gold-content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gold-content h2 {
+            color: #ff9900;
+        }
+
+        .gold-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .resource-download {
+            margin-top: 20px;
+        }
+
+        .resource-download a {
+            background-color: #ffd700;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .resource-download a:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="gold-header">
+        <h1>Welcome, Gold Member!</h1>
+        <p>Thank you for subscribing to our Gold plan! Enjoy your exclusive content and resources.</p>
+        <span class="gold-badge">Gold Member Access</span>
+    </div>
+
+    <div class="gold-content">
+        <h2>Exclusive Gold Content</h2>
+        <p>
+            As a valued Gold member, you have access to premium resources, tutorials, and expert advice curated just for you. 
+            Stay ahead in your career journey with these exclusive materials and insights from our top mentors.
+        </p>
+
+        <!-- Example Resource Section -->
+        <div class="resource-download">
+            <h3>Download Exclusive eBook</h3>
+            <a href="{{ resource.content_file.url }}" download>Download Now</a>
+        </div>
+
+        <!-- If video or URL -->
+        <div class="resource-video">
+            <h3>Watch Premium Video Content</h3>
+            <a href="{{ resource.url }}" target="_blank">Watch Video</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

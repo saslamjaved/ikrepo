@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+{%block title%}Learn AI Recommendation Systems| ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Learn AI Recommendation Systems</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+      <div class="container">
+          <h1 class="display-4">Learn AI Recommendation Systems</h1>
+          <p class="lead">Build Intelligent Systems that Personalize User Experience</p>
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+      <div class="container">
+          <h2 class="display-5">Welcome to our in-depth guide on recommendation systems!</h2>
+          <p class="lead">Recommendation systems are a cornerstone of modern digital experiences, helping users discover products, content, and services tailored to their preferences. This page will introduce you to the fundamentals of recommendation systems, provide practical insights into building your own, and offer resources to enhance your understanding.</p>
+      </div>
+  </section>
+
+  <!-- What are Recommendation Systems Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>What are Recommendation Systems?</h2>
+          <h3>Definition:</h3>
+          <p>Recommendation Systems are algorithms designed to predict and suggest items that users may like based on their preferences and past behaviors. They are widely used in e-commerce, streaming services, social media, and more.</p>
+          <h3>Applications:</h3>
+          <ul>
+              <li><strong>E-Commerce:</strong> Suggesting products to users based on their browsing history and purchase behavior.</li>
+              <li><strong>Streaming Services:</strong> Recommending movies, shows, or music based on viewing or listening history.</li>
+              <li><strong>Social Media:</strong> Displaying posts or friends that align with users’ interests and interactions.</li>
+              <li><strong>Content Websites:</strong> Suggesting articles, blogs, or news based on reading patterns and user interests.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- How Recommendation Systems Work Section -->
+  <section class="section">
+      <div class="container">
+          <h2>How Recommendation Systems Work</h2>
+          <h3>1. Types of Recommendation Systems:</h3>
+          <h4>Collaborative Filtering:</h4>
+          <ul>
+              <li>User-Based Collaborative Filtering: Recommends items based on the preferences of similar users.</li>
+              <li>Item-Based Collaborative Filtering: Recommends items similar to those a user has liked in the past.</li>
+          </ul>
+          <h4>Content-Based Filtering:</h4>
+          <ul>
+              <li>Description-Based: Recommends items based on the attributes and features of the items and user preferences.</li>
+              <li>Profile-Based: Builds a profile of user preferences and recommends items that match this profile.</li>
+          </ul>
+          <h4>Hybrid Methods:</h4>
+          <ul>
+              <li>Combining Approaches: Integrates collaborative filtering, content-based filtering, and other techniques to improve recommendations and overcome limitations.</li>
+          </ul>
+
+          <h3>2. Key Components:</h3>
+          <ul>
+              <li>Data Collection: Gathering user data, item data, and interaction history.</li>
+              <li>Feature Extraction: Identifying relevant features from user and item data.</li>
+              <li>Model Training: Building models using algorithms such as matrix factorization, k-nearest neighbors (k-NN), or deep learning techniques.</li>
+              <li>Evaluation: Measuring the performance of recommendation systems using metrics such as accuracy, precision, recall, and F1 score.</li>
+          </ul>
+
+          <h3>3. Popular Algorithms:</h3>
+          <ul>
+              <li>Matrix Factorization: Decomposes the user-item interaction matrix into latent factors for recommendations.</li>
+              <li>Nearest Neighbors: Finds similar users or items and makes recommendations based on those similarities.</li>
+              <li>Deep Learning Models: Uses neural networks to capture complex patterns in user and item data.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Learning Resources Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Learning Resources</h2>
+          <h3>1. Introduction to Recommendation Systems</h3>
+          <ul>
+              <li>What are Recommendation Systems? Basic concepts and definitions.</li>
+              <li>Types of Recommendation Systems: Overview of collaborative filtering, content-based filtering, and hybrid methods.</li>
+          </ul>
+          <h3>2. Getting Started with Recommendation Systems</h3>
+          <ul>
+              <li>Tutorials: Step-by-step guides on building basic recommendation systems using popular libraries and tools like Scikit-Learn, Surprise, and TensorFlow.</li>
+              <li>Example Projects: Hands-on projects such as building a movie recommender or product recommendation system.</li>
+          </ul>
+          <h3>3. Advanced Topics</h3>
+          <ul>
+              <li>Matrix Factorization Techniques: Explore advanced matrix factorization methods like Singular Value Decomposition (SVD) and Alternating Least Squares (ALS).</li>
+              <li>Deep Learning for Recommendations: Learn about neural collaborative filtering, autoencoders, and other deep learning approaches for recommendations.</li>
+          </ul>
+          <h3>4. Tools and Libraries</h3>
+          <ul>
+              <li>Scikit-Learn: A versatile machine learning library with tools for building recommendation systems.</li>
+              <li>Surprise: A Python library specifically designed for building and analyzing recommendation systems.</li>
+              <li>TensorFlow and Keras: Frameworks for developing deep learning-based recommendation models.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Practical Applications Section -->
+  <section class="section">
+      <div class="container">
+          <h2>Practical Applications</h2>
+          <h3>1. Building Your First Recommendation System</h3>
+          <ul>
+              <li>Tutorial: Create a simple recommendation system using collaborative filtering or content-based filtering.</li>
+              <li>Code Examples: Access sample code and notebooks for various recommendation algorithms and techniques.</li>
+          </ul>
+          <h3>2. Real-World Case Studies</h3>
+          <ul>
+              <li>E-Commerce: How recommendation systems enhance user experience and drive sales on platforms like Amazon.</li>
+              <li>Streaming Services: The role of recommendation systems in platforms like Netflix and Spotify to keep users engaged.</li>
+          </ul>
+          <h3>3. Challenges and Competitions</h3>
+          <ul>
+              <li>Kaggle: Participate in recommendation system competitions to test your skills and learn from the community.</li>
+              <li>Online Challenges: Engage in challenges to refine your model-building capabilities and gain practical experience.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Resources and Further Reading Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Resources and Further Reading</h2>
+          <ul>
+              <li>Books: Recommended readings for an in-depth understanding of recommendation systems and algorithms.</li>
+              <li>Online Courses: Enroll in courses and certifications to gain structured learning and hands-on experience.</li>
+              <li>Communities and Forums: Join forums and online communities to discuss recommendation systems, share your work, and seek advice from experts.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="section text-center">
+      <div class="container">
+          <h2>Get Started with Recommendation Systems</h2>
+          <p>Ready to dive into recommendation systems? Start by exploring our tutorials, tools, and resources, and begin building your own personalized recommendation engine today!</p>
+          <p><a class="btn btn-primary" href="{%url 'users:register' %}">Sign Up for Updates</a></p>
+          <p>Connect with Us: Join our community forums and follow us on social media for more insights and discussions on recommendation systems and AI.</p>
+      </div>
+  </section>
+
+<!-- ################# Page Ends ##################-->                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+    </div>
+</section>
+
+
+
+
+  {% endblock %}

@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{%block title%}Projects and Tutorials | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Projects and Tutorials | AI Learning Hub</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+ <section class="section dashboard">
+  <div class="row">
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <!-- Page Start -->
+              <!-- Tabs navs -->
+              <ul class="nav nav-tabs mb-2" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link active text-bg-primary m-2 p-3"
+                    id="ex1-tab-1"
+                    href="{% url 'ai_home' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-1"
+                    aria-selected="true"
+                    >AI Home</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-success m-2 p-3"
+                    id="ex1-tab-2"
+                    href="{% url 'ai_learn' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-2"
+                    aria-selected="false"
+                    >Learn AI</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-danger m-2 p-3"
+                    id="ex1-tab-3"
+                    href="{% url 'ai_projects' %}""
+                    role="tab"
+                    aria-controls="ex1-tabs-3"
+                    aria-selected="false"
+                    >Projects</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-warning m-2 p-3"
+                      id="ex1-tab-4"
+                      href="{% url 'ai_resources' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-4"
+                      aria-selected="false"
+                      >Resources</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-info m-2 p-3"
+                      id="ex1-tab-5"
+                      href="{% url 'ai_blogs' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-5"
+                      aria-selected="false"
+                      >Blogs</a>
+                  </li>               
+              </ul>
+              <!-- Tabs navs -->
+              <!-- Tabs content -->
+              <div class="tab-content" id="ex1-content">
+                <div
+                  class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                    <!-- Main Content -->
+                    <main class="container my-5">
+                      <div class="jumbotron">
+                          <h2 class="display-4">Trending AI Projects for Beginners</h2>
+                          <p class="lead">Explore some of the most exciting and accessible AI projects that are trending right now. These projects are great for beginners and offer practical applications of artificial intelligence.</p>
+                      </div>
+              
+                      <div class="row">
+                          <!-- Chatbots -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/chatbots.jpg' %}" class="card-img-top rounded-2" alt="Chatbots">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Chatbots and Virtual Assistants</h5>
+                                      <p class="card-text">Chatbots interact with users through text or voice, providing answers and performing tasks. Virtual assistants like Siri and Alexa use natural language processing (NLP) to understand and respond to queries.</p>
+                                      <a href="{% url 'chatbotsArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Image Classification -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/image_class.webp' %}" class="card-img-top rounded-2" alt="Image Classification">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Image Classification</h5>
+                                      <p class="card-text">Image classification involves training AI models to recognize and categorize objects within images. Convolutional Neural Networks (CNNs) are used to analyze visual data.</p>
+                                      <a href="{% url 'icArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Sentiment Analysis -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Sentiment_Analysis.webp' %}" class="card-img-top rounded-2" alt="Sentiment Analysis">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Sentiment Analysis</h5>
+                                      <p class="card-text">Sentiment analysis determines the emotional tone of text, such as reviews or social media posts. It helps businesses understand public opinion by classifying text as positive, negative, or neutral.</p>
+                                      <a href="{% url 'saArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              
+                      <div class="row">
+                          <!-- Recommendation Systems -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/recommendations.png' %}" class="card-img-top rounded-2" alt="Recommendation Systems">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Recommendation Systems</h5>
+                                      <p class="card-text">Recommendation systems suggest products or content based on user preferences. They use techniques like collaborative filtering and content-based filtering to provide personalized recommendations.</p>
+                                      <a href="{% url 'larsArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Predictive Analytics -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Predictive.webp' %}" class="card-img-top rounded-2" alt="Predictive Analytics">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Predictive Analytics</h5>
+                                      <p class="card-text">Predictive analytics uses historical data to forecast future outcomes. By analyzing patterns, AI models can predict trends and help in decision-making processes.</p>
+                                      <a href="{% url 'lpaArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Autonomous Vehicles -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Automated_car.jpg' %}" class="card-img-top rounded-2" alt="Autonomous Vehicles">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Autonomous Vehicles</h5>
+                                      <p class="card-text">Autonomous vehicles use AI to drive and navigate without human input. They rely on sensors, cameras, and AI algorithms to interpret data and make driving decisions.</p>
+                                      <a href="{% url 'lavArticle' %}" class="btn btn-primary">Learn More</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </main>
+                </div>
+                
+              </div>
+              <!-- Tabs content -->
+              <!-- Page End -->
+            </div>        
+          </div>
+        </div>        
+      </div>
+    </div>
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+          <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              echarts.init(document.querySelector("#trafficChart")).setOption({
+                tooltip: {
+                  trigger: 'item'
+                },
+                legend: {
+                  top: '5%',
+                  left: 'center'
+                },
+                series: [{
+                  name: 'AI Market Trend',
+                  type: 'pie',
+                  radius: ['40%', '70%'],
+                  avoidLabelOverlap: false,
+                  label: {
+                    show: false,
+                    position: 'center'
+                  },
+                  emphasis: {
+                    label: {
+                      show: true,
+                      fontSize: '18',
+                      fontWeight: 'bold'
+                    }
+                  },
+                  labelLine: {
+                    show: false
+                  },
+                  data: [{
+                      "value": 1500,
+                      "name": "Healthcare"
+                    },
+                    {
+                      "value": 1300,
+                      "name": "Finance"
+                    },
+                    {
+                      "value": 1100,
+                      "name": "Retail"
+                    },
+                    {
+                      "value": 900,
+                      "name": "Automotive"
+                    },
+                    {
+                      "value": 800,
+                      "name": "Manufacturing"
+                    },
+                    {
+                      "value": 700,
+                      "name": "Telecommunications"
+                    },
+                    {
+                      "value": 600,
+                      "name": "Education"
+                    },
+                    {
+                      "value": 500,
+                      "name": "Energy"
+                    }
+                  ]
+                }]
+              });
+            });
+
+          </script>
+
+        </div>
+      </div><!-- End Website Traffic -->  
+
+      <!-- News & Updates Traffic -->
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+          <div class="news">
+            {% for t_article in t_articles %}
+            {% if t_article.is_approved %}
+            <div class="post-item clearfix">
+              <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+              <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+              <p>{{ article.excerpt }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div><!-- End sidebar recent posts-->
+
+        </div>
+      </div><!-- End News & Updates -->
+
+    </div><!-- End Right side columns -->    
+  </div>
+</section>
+{% endblock %}

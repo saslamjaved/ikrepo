@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block title %}About us | ikSaan.com - The AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+
+
+
+
+    <div class="pagination-controls">
+        {{ page_obj.previous_page_number }}
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">Next</a>
+        {% endif %}
+    </div>
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            {% for chapter in chapters %}
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#chapter-{{ chapter.slug }}-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-house-fill"></i><span>{{ chapter.title }}</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="chapter-{{ chapter.slug }}-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                        {% if chapter.lessons.all %}
+                            {% for lesson in chapter.lessons.all|dictsort:"order" %}
+                                <li>
+                                    <a href="#" class="lesson-link" data-lesson-slug="{{ lesson.slug }}">
+                                        <i class="bi bi-circle"></i><span>{{ lesson.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <li>No lessons available for this chapter.</li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
+    
+    <div class="col-12 border rounded" style="background: #513778">
+
+
+
+                <div id="lesson-pages">
+                    <div class="text-right" id="pagination-controls">
+                        <button class="btn btn-lg badge border" id="previous-page" style="display:none; color: #ffffff;">Previous</button>
+                        <button class="btn btn-lg badge border" id="next-page" style="display:none; color: #ffffff; ">Next</button>
+                    </div>
+                    <div id="pages-content">
+                        <!-- This will be dynamically updated with lesson pages -->
+                    </div>
+                </div>
+
+
+    </div>
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var lessonSlug;
+            var currentPage = 1;
+    
+            function loadPages(pageNumber) {
+                $.ajax({
+                    url: '/r/' + lessonSlug + '/pages/',
+                    type: 'GET',
+                    data: { page: pageNumber },
+                    success: function(response) {
+                        var pages = response.pages;
+                        var pagesContent = '';
+    
+                        pages.forEach(function(page) {
+                            if (page.content_type === 'text') {
+                                pagesContent += '<p>' + page.content + '</p>';
+                            } else if (page.content_type === 'image') {
+                                pagesContent += '<img src="' + page.image + '" alt="' + page.title + '" style="max-width: 100%;">';
+                            } else if (page.content_type === 'video') {
+                                pagesContent += '<iframe width="560" height="315" src="' + page.video_url + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+                            } else if (page.content_type === 'quiz') {
+                                pagesContent += '<a href="/quiz/' + page.quiz_id + '/" class="btn btn-primary">Take Quiz</a>';
+                            }
+                        });
+    
+                        $('#pages-content').html(pagesContent);
+    
+                        // Handle pagination controls
+                        if (response.has_previous) {
+                            $('#previous-page').show().data('page', response.previous_page_number);
+                        } else {
+                            $('#previous-page').hide();
+                        }
+    
+                        if (response.has_next) {
+                            $('#next-page').show().data('page', response.next_page_number);
+                        } else {
+                            $('#next-page').hide();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error:", error);
+                        console.log("Status:", status);
+                        console.log("Response:", xhr.responseText);
+                        alert('Error loading pages. Please try again.');
+                    }
+                });
+            }
+    
+            // Load pages when a lesson link is clicked
+            $('.lesson-link').click(function(e) {
+                e.preventDefault();
+                
+                lessonSlug = $(this).data('lesson-slug');
+                currentPage = 1;  // Reset to the first page
+                loadPages(currentPage);
+            });
+    
+            // Automatically load the first chapter's first lesson
+            var firstLesson = $('.lesson-link').first();
+            if (firstLesson.length) {
+                lessonSlug = firstLesson.data('lesson-slug');
+                loadPages(currentPage);
+            }
+    
+            // Pagination controls
+            $('#previous-page').click(function() {
+                if ($(this).data('page')) {
+                    currentPage = $(this).data('page');
+                    loadPages(currentPage);
+                }
+            });
+    
+            $('#next-page').click(function() {
+                if ($(this).data('page')) {
+                    currentPage = $(this).data('page');
+                    loadPages(currentPage);
+                }
+            });
+        });
+    </script>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+{% endblock %}

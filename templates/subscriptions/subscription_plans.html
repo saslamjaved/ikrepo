@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{%block title%}Subscription Plans | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <h1>Subscription Plans</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Subscription Plans</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+<!-- Page Start -->
+<div class="row">
+  <div class="col-12">
+    <div class="container-fluid mt-2 pt-2 text-center rounded-2" style="background-color: #F6C0C045;">
+      <h4 class="card-title">We customize course plans to suit your needs.</h4>
+    </div>
+    <div class="col-lg-12">
+      <div class="row">  
+        {% for plan in plans %}  
+        <!-- Bronze Card -->
+        <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card h-100">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                    </li>
+  
+                    <li><a class="dropdown-item" href="#">Enroll for more months</a></li>
+                  </ul>
+                </div>
+  
+                <div class="card-body">
+                  <h5 class="card-title">{{ plan.name }} Plan <span>| Subscription</span></h5>
+  
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i> <img src="{% static 'assets/img/' %}{{ plan.name }}.png"" alt="{{ plan.name }} Subscription" width="60" height="60"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><b>{{ plan.price }}</b></h6>                        
+                    </div>
+                  </div>
+                  {{ plan.description|safe }}
+                  <div class="card-footer">
+                  <ul>
+                    <li>Access to Resources: {{ plan.access_to_resources|yesno:"Yes,No" }}</li>
+                    <li>Access to Mentors: {{ plan.access_to_mentors|yesno:"Yes,No" }}</li>
+                    <li>Priority Support: {{ plan.priority_support|yesno:"Yes,No" }}</li>
+                    <li>Duration: {{ plan.duration_in_days }} days</li>
+                </ul>
+                    {% if user.is_authenticated %}
+                      <!--<a href="{% url 'create_checkout_session' plan.id %}" class="btn btn-warning fancybox fancybox.ajax" >Subscribe Now</a> -->
+                      <a href="#" class="btn btn-warning fancybox fancybox.ajax" >Subscribe Now</a>
+                    {% else %}
+                      <a href="{% url 'users:login' %}" class="btn btn-warning fancybox fancybox.ajax" >Subscribe Now</a>
+                    {% endif %}
+                  </div>
+                </div>
+  
+              </div>
+        </div><!-- End Bronze Card -->
+        {% endfor %}
+      </div>
+    </div><!-- End Left side columns -->
+  </div>
+</div>
+ <!-- Page End -->
+ {% endblock %}

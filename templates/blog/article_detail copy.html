@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <p>Author: {{ article.author }}</p>
+    <p>{{ article.likes.count }} likes</p>
+    <a href="{% url 'like_article' article.pk %}">Like/Unlike</a>
+    <a href="{% url 'share_article' article.pk %}">Share</a>
+
+    <h2>Comments</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.author }}: {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

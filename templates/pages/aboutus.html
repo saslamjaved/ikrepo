@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{%block title%}About us |ikSaan.com-The AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">About us</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-12">
+        <div class="row">
+
+          <!-- Reports -->
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Our Mission</h5>
+<p>Welcome to ikSaan.com!<br>
+At ikSaan.com, we are at the forefront of the digital learning revolution, specializing in Artificial Intelligence (AI), Data Science, and Robotics. Our mission is to provide cutting-edge education and practical skills for individuals and professionals eager to excel in these dynamic and rapidly evolving fields.<br>
+
+<br>Our Mission<br>
+Our mission is to empower learners with the knowledge and skills needed to thrive in the world of AI, Data Science, and Robotics. We are dedicated to delivering high-quality, accessible, and relevant educational resources that cater to a diverse range of learners, from beginners to advanced practitioners. Our goal is to bridge the gap between academic learning and real-world application, equipping you with the tools to make a meaningful impact in these innovative domains.
+</p>
+              </div>
+            </div>
+          </div><!-- End Reports -->
+
+          <!-- Recent Sales -->
+          <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+              <div class="card-body">
+                <h5 class="card-title">What We Offer</span></h5>
+                <p>Expert-Led Courses: Dive into comprehensive courses designed by industry experts and leading academics. Our curriculum covers everything from foundational concepts to advanced techniques in AI, Data Science, and Robotics.<br><br>
+
+                Hands-On Projects: Apply what you learn through interactive, real-world projects that build practical skills and enhance your understanding of complex topics.<br><br>
+                
+                Flexible Learning: Learn at your own pace with our flexible, online course structure. Access materials anytime, anywhere, and fit learning into your schedule with ease.<br><br>
+                
+                Cutting-Edge Content: Stay ahead of the curve with content that reflects the latest advancements and trends in AI, Data Science, and Robotics. Our courses are continually updated to ensure they meet the evolving demands of these fields.<br></p>
+              </div>
+
+            </div>
+          </div><!-- End Recent Sales -->
+
+          <!-- Top Selling -->
+          <div class="col-12">
+            <div class="card top-selling overflow-auto">
+
+              <div class="card-body pb-0">
+                <h5 class="card-title">Our Values</span></h5>
+                <p>Innovation: We are committed to fostering a culture of innovation. By integrating the latest technologies and research, we ensure our courses are at the cutting edge of the AI, Data Science, and Robotics industries.<br><br>
+
+                Quality: We prioritize excellence in all aspects of our platform. From course content to learner support, we strive to deliver the highest quality educational experience.<br>
+                
+                Accessibility: Our platform is designed to be inclusive and accessible, providing learners from all backgrounds with the opportunity to enhance their skills and advance their careers.<br>
+                
+                Community: We believe in the power of community. Engage with like-minded learners, share insights, and collaborate on projects through our interactive forums and networking opportunities.<br></p>
+              </div>
+
+            </div>
+          </div><!-- End Top Selling -->
+        </div>
+      </div><!-- End Left side columns -->
+    </div>
+  </section>
+{% endblock %}

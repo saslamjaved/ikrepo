@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{%block title%}Resources | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Resources | AI Learning Hub</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+ <section class="section dashboard">
+  <div class="row">
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <!-- Page Start -->
+              <!-- Tabs navs -->
+              <ul class="nav nav-tabs mb-2" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link active text-bg-primary m-2 p-3"
+                    id="ex1-tab-1"
+                    href="{% url 'ai_home' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-1"
+                    aria-selected="true"
+                    >AI Home</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-success m-2 p-3"
+                    id="ex1-tab-2"
+                    href="{% url 'ai_learn' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-2"
+                    aria-selected="false"
+                    >Learn AI</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-danger m-2 p-3"
+                    id="ex1-tab-3"
+                    href="{% url 'ai_projects' %}""
+                    role="tab"
+                    aria-controls="ex1-tabs-3"
+                    aria-selected="false"
+                    >Projects</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-warning m-2 p-3"
+                      id="ex1-tab-4"
+                      href="{% url 'ai_resources' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-4"
+                      aria-selected="false"
+                      >Resources</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-info m-2 p-3"
+                      id="ex1-tab-5"
+                      href="{% url 'ai_blogs' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-5"
+                      aria-selected="false"
+                      >Blogs</a>
+                  </li>               
+              </ul>
+              <!-- Tabs navs -->
+              <!-- Tabs content -->
+              <div class="tab-content" id="ex1-content">
+                <div
+                  class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                    <!-- Main Content -->
+                    <main class="container my-5">
+                      <div class="jumbotron">
+                          <h2 class="display-4">Free AI Resources for Projects</h2>
+                          <p class="lead">Discover a range of free resources that can help you kickstart and support your AI projects. These tools and platforms offer valuable support for learning, development, and experimentation.</p>
+                      </div>
+              
+                      <div class="row">
+                          <!-- TensorFlow -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/TensorFlow.png' %}" class="card-img-top" alt="TensorFlow">
+                                  <div class="card-body">
+                                      <h5 class="card-title">TensorFlow</h5>
+                                      <p class="card-text">TensorFlow is an open-source machine learning library developed by Google. It is widely used for building and training neural networks and deep learning models. TensorFlow offers extensive documentation and community support to help beginners get started.</p>
+                                      <a href="https://www.tensorflow.org" class="btn btn-primary" target="_blank">Visit TensorFlow</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Keras -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Keras.png' %}" class="card-img-top" alt="Keras">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Keras</h5>
+                                      <p class="card-text">Keras is a user-friendly neural network library written in Python. It runs on top of TensorFlow and simplifies the process of building and training deep learning models. Ideal for beginners due to its straightforward API.</p>
+                                      <a href="https://keras.io" class="btn btn-primary" target="_blank">Visit Keras</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Scikit-Learn -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Scikit-Learn.svg' %}" class="card-img-top" alt="Scikit-Learn">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Scikit-Learn</h5>
+                                      <p class="card-text">Scikit-Learn is a powerful Python library for machine learning that supports a range of algorithms for classification, regression, clustering, and more. It’s great for beginners due to its clear documentation and easy-to-use functions.</p>
+                                      <a href="https://scikit-learn.org" class="btn btn-primary" target="_blank">Visit Scikit-Learn</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              
+                      <div class="row">
+                          <!-- Google Colab -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Google_Colab.png' %}" class="card-img-top" alt="Google Colab">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Google Colab</h5>
+                                      <p class="card-text">Google Colab is a free cloud-based Jupyter notebook environment that supports Python and allows you to write and execute code in your browser. It provides free access to GPUs and TPUs, making it ideal for machine learning and deep learning projects.</p>
+                                      <a href="https://colab.research.google.com" class="btn btn-primary" target="_blank">Visit Google Colab</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Kaggle -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/Kaggle.jpg' %}" class="card-img-top" alt="Kaggle">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Kaggle</h5>
+                                      <p class="card-text">Kaggle is a platform for data science competitions, datasets, and tutorials. It’s a great place to find real-world datasets for your AI projects and participate in competitions to test your skills.</p>
+                                      <a href="https://www.kaggle.com" class="btn btn-primary" target="_blank">Visit Kaggle</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- OpenAI -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card h-100">
+                                  <img src="{% static 'assets/img/OpenAI.png' %}" class="card-img-top" alt="OpenAI">
+                                  <div class="card-body">
+                                      <h5 class="card-title">OpenAI</h5>
+                                      <p class="card-text">OpenAI provides cutting-edge AI research and tools. With resources like the GPT models and the OpenAI Gym for reinforcement learning, it offers powerful tools and frameworks to experiment with advanced AI concepts.</p>
+                                      <a href="https://www.openai.com" class="btn btn-primary" target="_blank">Visit OpenAI</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </main>
+                </div>
+                
+              </div>
+              <!-- Tabs content -->
+              <!-- Page End -->
+            </div>        
+          </div>
+        </div>        
+      </div>
+    </div>
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+          <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              echarts.init(document.querySelector("#trafficChart")).setOption({
+                tooltip: {
+                  trigger: 'item'
+                },
+                legend: {
+                  top: '5%',
+                  left: 'center'
+                },
+                series: [{
+                  name: 'AI Market Trend',
+                  type: 'pie',
+                  radius: ['40%', '70%'],
+                  avoidLabelOverlap: false,
+                  label: {
+                    show: false,
+                    position: 'center'
+                  },
+                  emphasis: {
+                    label: {
+                      show: true,
+                      fontSize: '18',
+                      fontWeight: 'bold'
+                    }
+                  },
+                  labelLine: {
+                    show: false
+                  },
+                  data: [{
+                      "value": 1500,
+                      "name": "Healthcare"
+                    },
+                    {
+                      "value": 1300,
+                      "name": "Finance"
+                    },
+                    {
+                      "value": 1100,
+                      "name": "Retail"
+                    },
+                    {
+                      "value": 900,
+                      "name": "Automotive"
+                    },
+                    {
+                      "value": 800,
+                      "name": "Manufacturing"
+                    },
+                    {
+                      "value": 700,
+                      "name": "Telecommunications"
+                    },
+                    {
+                      "value": 600,
+                      "name": "Education"
+                    },
+                    {
+                      "value": 500,
+                      "name": "Energy"
+                    }
+                  ]
+                }]
+              });
+            });
+
+          </script>
+
+        </div>
+      </div><!-- End Website Traffic -->  
+
+      <!-- News & Updates Traffic -->
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+          <div class="news">
+            {% for t_article in t_articles %}
+            {% if t_article.is_approved %}
+            <div class="post-item clearfix">
+              <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+              <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+              <p>{{ article.excerpt }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div><!-- End sidebar recent posts-->
+
+        </div>
+      </div><!-- End News & Updates -->
+
+    </div><!-- End Right side columns -->    
+  </div>
+</section>
+{% endblock %}

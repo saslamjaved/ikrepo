@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{%block title%}Learn Sentiment Analysis| ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Learn Sentiment Analysis</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+      <div class="container">
+          <h1 class="display-4">Learn Sentiment Analysis</h1>
+          <p class="lead">Understand and Analyze Emotions in Text</p>
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+      <div class="container">
+          <h2 class="display-5">Welcome to our comprehensive guide on sentiment analysis!</h2>
+          <p class="lead">Sentiment analysis, or opinion mining, is a powerful technique in natural language processing (NLP) that involves determining the sentiment or emotional tone behind a piece of text. Whether you’re interested in analyzing customer feedback, social media posts, or product reviews, this page will equip you with the knowledge and tools to get started.</p>
+      </div>
+  </section>
+
+  <!-- What is Sentiment Analysis Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>What is Sentiment Analysis?</h2>
+          <h3>Definition:</h3>
+          <p>Sentiment Analysis is the process of determining the sentiment expressed in a text, such as positive, negative, or neutral. It can be used to understand opinions, emotions, and attitudes in written content.</p>
+          <h3>Applications:</h3>
+          <ul>
+              <li><strong>Customer Feedback:</strong> Analyze reviews and feedback to gauge customer satisfaction and identify areas for improvement.</li>
+              <li><strong>Social Media Monitoring:</strong> Track public sentiment about brands, products, or events across social media platforms.</li>
+              <li><strong>Market Research:</strong> Understand consumer opinions and trends to inform business decisions and strategies.</li>
+              <li><strong>Political Analysis:</strong> Assess public opinion and sentiment on political issues and candidates.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- How Sentiment Analysis Works Section -->
+  <section class="section">
+      <div class="container">
+          <h2>How Sentiment Analysis Works</h2>
+          <h3>1. Text Preprocessing:</h3>
+          <ul>
+              <li><strong>Tokenization:</strong> Splitting text into words or phrases (tokens).</li>
+              <li><strong>Normalization:</strong> Converting text to a standard format, such as lowercasing and removing punctuation.</li>
+              <li><strong>Stop Words Removal:</strong> Eliminating common words (e.g., "and", "the") that may not contribute to sentiment analysis.</li>
+          </ul>
+          <h3>2. Feature Extraction:</h3>
+          <ul>
+              <li><strong>Bag of Words (BoW):</strong> Representing text data as a matrix of word counts.</li>
+              <li><strong>Term Frequency-Inverse Document Frequency (TF-IDF):</strong> Measuring the importance of words in a document relative to a corpus.</li>
+              <li><strong>Word Embeddings:</strong> Using pre-trained embeddings like Word2Vec or GloVe to capture semantic meaning.</li>
+          </ul>
+          <h3>3. Sentiment Classification:</h3>
+          <ul>
+              <li><strong>Rule-Based Approaches:</strong> Using predefined lists of positive and negative words to classify sentiment.</li>
+              <li><strong>Machine Learning Models:</strong> Training models like Naive Bayes, Support Vector Machines (SVM), or Logistic Regression to classify sentiment based on features.</li>
+              <li><strong>Deep Learning Models:</strong> Utilizing neural networks, such as Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, for more accurate sentiment analysis.</li>
+          </ul>
+          <h3>4. Evaluation and Testing:</h3>
+          <ul>
+              <li><strong>Accuracy:</strong> Measuring the percentage of correctly classified texts.</li>
+              <li><strong>Confusion Matrix:</strong> Visualizing classification performance, including true positives, false positives, true negatives, and false negatives.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Learning Resources Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Learning Resources</h2>
+          <h3>1. Introduction to Sentiment Analysis</h3>
+          <ul>
+              <li>What is Sentiment Analysis? Basic concepts and definitions.</li>
+              <li>How It Works: Explanation of the sentiment analysis process and methodologies.</li>
+          </ul>
+          <h3>2. Getting Started with Sentiment Analysis</h3>
+          <ul>
+              <li>Tutorials: Follow our step-by-step guides to build basic sentiment analysis models using popular libraries and tools such as NLTK, SpaCy, and TextBlob.</li>
+              <li>Example Projects: Practice sentiment analysis with real-world datasets, such as movie reviews or Twitter sentiment analysis.</li>
+          </ul>
+          <h3>3. Advanced Topics</h3>
+          <ul>
+              <li>Deep Learning for Sentiment Analysis: Explore advanced techniques using deep learning models, including LSTM and Transformer-based models like BERT.</li>
+              <li>Aspect-Based Sentiment Analysis: Learn how to analyze sentiment about specific aspects or features of a product or service.</li>
+          </ul>
+          <h3>4. Tools and Libraries</h3>
+          <ul>
+              <li><strong>NLTK (Natural Language Toolkit):</strong> A comprehensive library for working with human language data, including sentiment analysis.</li>
+              <li><strong>TextBlob:</strong> A library that simplifies text processing and sentiment analysis.</li>
+              <li><strong>SpaCy:</strong> An open-source library for advanced NLP tasks, including sentiment analysis.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Practical Applications Section -->
+  <section class="section">
+      <div class="container">
+          <h2>Practical Applications</h2>
+          <h3>1. Building Your First Sentiment Analyzer</h3>
+          <ul>
+              <li>Tutorial: Create a simple sentiment analysis model using Python and popular libraries.</li>
+              <li>Code Examples: Access sample code and notebooks for various sentiment analysis techniques.</li>
+          </ul>
+          <h3>2. Real-World Case Studies</h3>
+          <ul>
+              <li><strong>E-Commerce:</strong> Analyze customer reviews to understand sentiment trends and improve products or services.</li>
+              <li><strong>Social Media:</strong> Monitor sentiment about brands or events to engage with audiences more effectively.</li>
+          </ul>
+          <h3>3. Challenges and Competitions</h3>
+          <ul>
+              <li>Kaggle: Participate in sentiment analysis competitions to test your skills and learn from others.</li>
+              <li>Online Challenges: Engage in challenges to enhance your model-building abilities and gain practical experience.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Resources and Further Reading Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Resources and Further Reading</h2>
+          <ul>
+              <li>Books: Recommended readings for a deeper understanding of sentiment analysis and NLP.</li>
+              <li>Online Courses: Enroll in courses and certifications to gain structured learning and hands-on experience.</li>
+              <li>Communities and Forums: Join forums and online communities to discuss sentiment analysis, share your work, and seek advice from experts.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="section text-center">
+      <div class="container">
+          <h2>Get Started with Sentiment Analysis</h2>
+          <p>Ready to dive into sentiment analysis? Start exploring our tutorials, tools, and resources, and begin analyzing sentiments in text today!</p>
+          <p><a class="btn btn-primary" href="{%url 'users:register' %}">Sign Up for Updates</a></p>
+          <p>Connect with Us: Join our community forums and follow us on social media for more insights and discussions on sentiment analysis and AI.</p>
+      </div>
+  </section>
+<!-- ################# Page Ends ##################-->                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+    </div>
+</section>
+
+
+
+
+  {% endblock %}

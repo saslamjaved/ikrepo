@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+{%block title%}Autonomous Vehicles| ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Autonomous Vehicles</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+      <div class="container">
+          <h1 class="display-4">What are Autonomous Vehicles?</h1>
+          <p class="lead">Definition and Technology Behind Self-Driving Cars</p>
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+      <div class="container">
+          <h2 class="display-5">Welcome to our guide on autonomous vehicles!</h2>
+          <p class="lead">Autonomous Vehicles are cars or trucks that can travel without human intervention. They use advanced sensors, cameras, artificial intelligence, and machine learning algorithms to navigate and make decisions on the road.</p>
+      </div>
+  </section>
+
+  <!-- Definition and Levels of Automation -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Definition and Levels of Automation</h2>
+          <p><strong>Definition:</strong> Autonomous Vehicles are cars or trucks that are capable of traveling without human intervention. They use a combination of sensors, cameras, artificial intelligence, and machine learning algorithms to navigate and make decisions on the road.</p>
+          <h3>Levels of Automation:</h3>
+          <ul>
+              <li><strong>Level 0:</strong> No Automation - Human driver controls all aspects of driving.</li>
+              <li><strong>Level 1:</strong> Driver Assistance - Basic functions like cruise control or lane-keeping assist.</li>
+              <li><strong>Level 2:</strong> Partial Automation - Vehicle can control both steering and acceleration, but driver must remain engaged.</li>
+              <li><strong>Level 3:</strong> Conditional Automation - Vehicle can handle all driving tasks in certain conditions, but human must be ready to take over.</li>
+              <li><strong>Level 4:</strong> High Automation - Vehicle can operate autonomously in most conditions, with no human intervention required in certain environments.</li>
+              <li><strong>Level 5:</strong> Full Automation - Vehicle can operate autonomously in all conditions and environments, with no human intervention required.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- How Autonomous Vehicles Work -->
+  <section class="section">
+      <div class="container">
+          <h2>How Autonomous Vehicles Work</h2>
+          <h3>1. Sensor Systems:</h3>
+          <ul>
+              <li><strong>LiDAR (Light Detection and Ranging):</strong> Uses laser beams to create a detailed 3D map of the vehicle’s surroundings.</li>
+              <li><strong>Cameras:</strong> Capture high-resolution images for object detection, lane detection, and traffic sign recognition.</li>
+              <li><strong>Radar:</strong> Measures the speed and distance of objects, particularly useful for detecting other vehicles and obstacles.</li>
+              <li><strong>Ultrasonic Sensors:</strong> Detect close objects and assist with parking and low-speed maneuvers.</li>
+          </ul>
+          <h3>2. Perception and Mapping:</h3>
+          <ul>
+              <li><strong>Object Detection:</strong> Identifies and classifies objects such as pedestrians, vehicles, and traffic signals.</li>
+              <li><strong>Semantic Segmentation:</strong> Analyzes images to understand the road environment, including lanes, road signs, and obstacles.</li>
+              <li><strong>Localization:</strong> Determines the vehicle’s exact position on the map using GPS and high-definition maps.</li>
+          </ul>
+          <h3>3. Decision Making:</h3>
+          <ul>
+              <li><strong>Path Planning:</strong> Calculates the optimal route and maneuvers based on the vehicle’s current location and destination.</li>
+              <li><strong>Behavior Planning:</strong> Makes decisions on how to react to dynamic conditions such as other vehicles, pedestrians, and traffic signals.</li>
+              <li><strong>Control:</strong> Executes driving commands, including steering, braking, and acceleration.</li>
+          </ul>
+          <h3>4. Machine Learning and AI:</h3>
+          <ul>
+              <li><strong>Training Models:</strong> Uses large datasets of driving scenarios to train machine learning models for object detection, path planning, and decision-making.</li>
+              <li><strong>Simulation:</strong> Tests and validates autonomous driving algorithms in simulated environments to ensure safety and reliability.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Learning Resources -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Learning Resources</h2>
+          <h3>1. Introduction to Autonomous Vehicles</h3>
+          <ul>
+              <li>What are Autonomous Vehicles? Basic concepts and definitions.</li>
+              <li>How They Work: Overview of sensor systems, perception, decision-making, and AI technologies.</li>
+          </ul>
+          <h3>2. Getting Started with Autonomous Vehicles</h3>
+          <ul>
+              <li>Tutorials: Step-by-step guides on building simple autonomous driving systems using platforms like ROS (Robot Operating System) and simulation tools.</li>
+              <li>Example Projects: Hands-on projects such as creating a basic self-driving car simulation or developing object detection algorithms.</li>
+          </ul>
+          <h3>3. Advanced Topics</h3>
+          <ul>
+              <li>Deep Learning for Perception: Explore advanced techniques using neural networks for object detection and image segmentation.</li>
+              <li>Autonomous Vehicle Safety: Learn about safety standards, fail-safe mechanisms, and ethical considerations in autonomous driving.</li>
+          </ul>
+          <h3>4. Tools and Libraries</h3>
+          <ul>
+              <li><strong>ROS (Robot Operating System):</strong> An open-source framework for developing robotics and autonomous systems.</li>
+              <li><strong>OpenCV:</strong> A library for computer vision tasks, including image processing and object detection.</li>
+              <li><strong>TensorFlow and PyTorch:</strong> Frameworks for developing and training machine learning models used in autonomous vehicles.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Practical Applications -->
+  <section class="section">
+      <div class="container">
+          <h2>Practical Applications</h2>
+          <h3>1. Building Your First Autonomous Vehicle Model</h3>
+          <ul>
+              <li>Tutorial: Create a basic autonomous vehicle simulation using ROS or other simulation tools.</li>
+              <li>Code Examples: Access sample code and projects for developing autonomous driving algorithms and systems.</li>
+          </ul>
+          <h3>2. Real-World Case Studies</h3>
+          <ul>
+              <li><strong>Industry Leaders:</strong> Explore how companies like Tesla, Waymo, and Cruise are advancing autonomous vehicle technology.</li>
+              <li><strong>Regulatory and Ethical Issues:</strong> Understand the regulatory challenges and ethical considerations in deploying autonomous vehicles.</li>
+          </ul>
+          <h3>3. Challenges and Competitions</h3>
+          <ul>
+              <li>Autonomous Vehicle Competitions: Participate in challenges and hackathons focused on autonomous driving technology.</li>
+              <li>Online Challenges: Engage in data science and AI challenges related to autonomous vehicle systems.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Resources and Further Reading -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Resources and Further Reading</h2>
+          <ul>
+              <li>Books: Recommended readings for a deeper understanding of autonomous vehicle technologies and algorithms.</li>
+              <li>Online Courses: Enroll in courses and certifications to gain structured learning and hands-on experience.</li>
+              <li>Communities and Forums: Join forums and online communities to discuss autonomous vehicles, share your work, and seek advice from experts.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="section text-center">
+      <div class="container">
+          <h2>Get Started with Autonomous Vehicles</h2>
+          <p>Ready to explore the world of autonomous vehicles? Start by diving into our tutorials, tools, and resources, and begin building your own self-driving systems today!</p>
+          <p><a class="btn btn-primary" href="{%url 'users:register' %}">Sign Up for Updates</a></p>
+          <p>Connect with Us: Join our community forums and follow us on social media for more insights and discussions on autonomous vehicles and AI.</p>
+      </div>
+  </section>
+
+<!-- ################# Page Ends ##################-->                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+    </div>
+</section>
+
+
+
+
+  {% endblock %}

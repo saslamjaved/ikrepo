@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{%block title%}AI Tutorials | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <h1>Contact</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">AI Tutorials</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+        <!-- Reports -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">  
+<!-- ################# Page Starts ##################-->                  
+<!-- Page Start -->
+ 
+                      
+
+<!--################ -->
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Chatbot</h5>
+          <p class="card-text">
+            Description: A chatbot simulates conversation with users, often using natural language processing (NLP) to understand and respond to text inputs. Start by building a basic chatbot that can handle common questions or engage in simple dialogues. Use libraries like NLTK (Natural Language Toolkit) or spaCy for processing and understanding text. For added complexity, you might integrate with messaging platforms or build a web-based interface.
+          </p>
+          <ul>
+            <li>Goal: Create a basic chatbot.</li>
+            <li>Tools: NLTK, spaCy.</li>
+            <li>Function: Design it to handle FAQs or engage in basic conversations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Sentiment Analysis</h5>
+          <p class="card-text">Description: Sentiment analysis involves determining the emotional tone behind a series of words. This project aims to create a model that classifies text—such as product reviews, tweets, or feedback—as positive, negative, or neutral. Using Python libraries and pre-existing datasets, you can train a machine learning model to predict sentiment based on features extracted from the text.</p>
+          <ul>
+            <li>Goal: Build a model to gauge sentiment.</li>
+            <li>Tools: Python libraries for NLP.</li>
+            <li>Function: Classify text data (e.g., product reviews) as positive or negative</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Image Classification:</h5>
+          <p class="card-text">Description: Image classification involves categorizing images into predefined classes. By leveraging pre-trained models like MobileNet or ResNet, you can create a system to classify images from datasets like CIFAR-10 (which contains small images of objects) or MNIST (handwritten digits). This project introduces you to convolutional neural networks (CNNs) and their application in visual recognition.</p>
+          <ul>
+            <li>Goal: Classify images into categories.</li>
+            <li>Tools: Pre-trained models like MobileNet, ResNet.</li>
+            <li>Function: Use datasets such as CIFAR-10 or MNIST for training and testing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Spam Detection</h5>
+            <p class="card-text">Description: Spam detection focuses on classifying whether a given email or message is spam or not. Using labeled datasets (e.g., emails marked as spam or not), you can build a classification model using techniques like Naive Bayes, SVM, or neural networks. This project helps you understand text classification and feature extraction methods.</p>
+            <ul>
+                <li>Goal: Create a spam filter.</li>
+                <li>Tools: Classification algorithms, labeled email datasets.</li>
+                <li>Function: Classify emails or messages as spam or not spam.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Text Summarization</h5>
+            <p class="card-text">Description: Text summarization involves generating a concise summary from a longer piece of text. This project uses NLP models to extract key information and generate a summary. You can use libraries like Hugging Face’s Transformers to leverage pre-trained models for extractive (pulling key phrases) or abstractive (generating new text) summarization techniques.</p>
+            <ul>
+                <li>Goal: Summarize long texts.</li>
+                <li>Tools: Hugging Face’s Transformers or similar libraries.</li>
+                <li>Function: Generate concise summaries from longer documents</li>
+              </ul>
+          </div>
+        </div>
+      </div>      
+
+  </div>
+
+ <!-- Page End -->
+<!-- ################# Page Ends ##################-->     
+</div>
+</div>
+</div>
+</div>
+</div><!-- End Left side columns -->
+<!-- Right side columns -->
+<div class="col-lg-4">
+
+  <div class="card">
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+
+    <div class="card-body pb-0">
+      <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+      <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          echarts.init(document.querySelector("#trafficChart")).setOption({
+            tooltip: {
+              trigger: 'item'
+            },
+            legend: {
+              top: '5%',
+              left: 'center'
+            },
+            series: [{
+              name: 'AI Market Trend',
+              type: 'pie',
+              radius: ['40%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: '18',
+                  fontWeight: 'bold'
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [{
+                  "value": 1500,
+                  "name": "Healthcare"
+                },
+                {
+                  "value": 1300,
+                  "name": "Finance"
+                },
+                {
+                  "value": 1100,
+                  "name": "Retail"
+                },
+                {
+                  "value": 900,
+                  "name": "Automotive"
+                },
+                {
+                  "value": 800,
+                  "name": "Manufacturing"
+                },
+                {
+                  "value": 700,
+                  "name": "Telecommunications"
+                },
+                {
+                  "value": 600,
+                  "name": "Education"
+                },
+                {
+                  "value": 500,
+                  "name": "Energy"
+                }
+              ]
+            }]
+          });
+        });
+
+      </script>
+
+    </div>
+  </div><!-- End Website Traffic -->  
+
+  <!-- News & Updates Traffic -->
+  <div class="card">
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+
+    <div class="card-body pb-0">
+      <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+      <div class="news">
+        {% for t_article in t_articles %}
+        {% if t_article.is_approved %}
+        <div class="post-item clearfix">
+          <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+          <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+          <p>{{ article.excerpt }}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div><!-- End sidebar recent posts-->
+
+    </div>
+  </div><!-- End News & Updates -->
+
+</div><!-- End Right side columns -->
+</div>
+</section>  
+{% endblock %}

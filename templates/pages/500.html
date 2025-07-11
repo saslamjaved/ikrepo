@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block title%} Internal server error - ikSaan.com{% endblock %}
+{% load static %}
+{% block main %}
+  <title>Pages / Internal server error - ikSaan.com</title>
+  <main>
+    <div class="container">
+
+      <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+        <h1>Internal server error</h1>
+        <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+        <a class="btn" href="{% url 'home' %}">Back to home</a>
+        <img src="{% static 'assets/img/not-found.jpg' %}" class="img-fluid py-5" alt="Page Not Found">
+        <div class="credits">
+          Designed by <a href="https://ikSaan.com.com/">ikSaan.com</a>
+        </div>
+      </section>
+    </div>
+  </main><!-- End #main -->
+  {% endblock %}

@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load form_filters %}
+{% block title %}{{ article.title }} - ikSaan.com{% endblock %}
+{% block description %}
+    {% if article.description %}
+        {{ article.description }}
+    {% else %}
+        Learn about {{ article.title }} and its insights.
+    {% endif %}
+{% endblock %}
+{% load static %}
+{% block main %}
+    <div class="col-md-12 col-lg-10 col-xl-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-header">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                </div>
+                <div class="d-flex flex-start align-items-center">
+                    <img class="rounded-circle shadow-1-strong me-3" src="{{ article.author.avatar.url }}" alt="avatar" width="60" height="60" />
+                    <div>
+                        <h6 class="fw-bold text-primary mb-1">{{ article.author }}</h6>
+                        <p class="text-muted small mb-0">Shared publicly - {{ article.created_at|date:"F j, Y" }}</p>
+                    </div>
+                </div>
+                {% if article.thumbnail %}
+                    <img src="{{ article.thumbnail.url }}" class="img-thumbnail rounded float-start" alt="{{ article.title }}" />
+                {% endif %}
+                <p class="mt-3 mb-4 pb-2">{{ article.content|safe }}</p>
+                <div class="small d-flex justify-content-start">
+                    {% if user in article.likes.all %}
+                        <a href="{% url 'like_article' article.slug %}" class="btn btn-whatsapp">
+                            <i class="bi bi-hand-thumbs-up-fill"></i>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'like_article' article.slug %}" class="btn btn-whatsapp">
+                            <i class="far fa-thumbs-up me-2" style="color: #25d366;"></i>
+                        </a>
+                    {% endif %}
+                    <a href="#!" class="btn btn-whatsapp">
+                        <i class="bi bi-chat-left-text" style="color: #25d366;"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text={{ article.title }}%20{{ request.build_absolute_uri|urlencode }}" target="_blank" class="btn btn-whatsapp">
+                        <i class="bi bi-share" style="color: #25d366;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Comment and Reply Section -->
+            <section class="gradient-custom">
+                <div class="container">
+                  <div class="card">
+                    <h4 class="text-center">Comments by Users</h4>
+                    <div class="card-body border" id="comments-section">
+                      <!-- Comments will be loaded here by AJAX -->
+                    </div>
+
+                    <!-- Comment and Reply Section End -->
+
+                    {% if user.is_authenticated %}
+                        <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                            <img class="rounded-circle shadow-1-strong me-3" src="{{ user.avatar.url }}" alt="avatar" width="40" height="40" />
+                            <form id="comment-form" method="post">
+                                {% csrf_token %}
+                                {{ comment_form.content|add_class:"form-control" }}
+                                <button type="submit" name="comment_form" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
+                    {% else %}
+                        <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                            <p>You must be logged in to post a comment.</p>
+                        </div>
+                    {% endif %}
+                  </div>
+        </section>            
+        </div>
+    </div>
+
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+        <!-- AI Market Trend Chart -->
+        <div class="card">
+            <div class="card-body pb-0">
+                <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+                <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        echarts.init(document.querySelector("#trafficChart")).setOption({
+                            tooltip: { trigger: 'item' },
+                            legend: { top: '5%', left: 'center' },
+                            series: [{
+                                name: 'AI Market Trend',
+                                type: 'pie',
+                                radius: ['40%', '70%'],
+                                data: [
+                                    { "value": 1500, "name": "Healthcare" },
+                                    { "value": 1300, "name": "Finance" },
+                                    { "value": 1100, "name": "Retail" },
+                                    { "value": 900, "name": "Automotive" },
+                                    { "value": 800, "name": "Manufacturing" },
+                                    { "value": 700, "name": "Telecommunications" },
+                                    { "value": 600, "name": "Education" },
+                                    { "value": 500, "name": "Energy" }
+                                ]
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <!-- Trending Articles Section -->
+        <div class="card">
+            <div class="card-body pb-0">
+                <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+                <div class="news">
+                    {% for t_article in t_articles %}
+                        <div class="post-item clearfix">
+                            <img src="{{ t_article.thumbnail.url }}" class="img-thumbnail rounded" alt="">
+                            <h4><a href="#">{{ t_article.title }}</a></h4>
+                            <p>{{ t_article.excerpt }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+<!---####################-->
+<div class="card">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1877627363010029"
+    crossorigin="anonymous"></script>
+    <!-- ikad01 -->
+    <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1877627363010029"
+    data-ad-slot="8569300988"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <!--#####################-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load comments via AJAX
+            function loadComments() {
+                fetch("{% url 'load_comments' article.slug %}")
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('comments-section').innerHTML = data.html;
+                    });
+            }
+
+            loadComments();
+
+            // Handle comment form submission
+            document.getElementById('comment-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                fetch("{% url 'post_comment' article.slug %}", {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadComments();
+                        this.reset();
+                    } else {
+                        // Handle errors
+                        console.error('Error:', data.error);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

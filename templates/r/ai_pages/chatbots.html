@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{%block title%}Chatbots and Virtual Assistants{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Chatbots and Virtual Assistants</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+    <!-- Container -->
+    <div class="container">
+
+      <!-- Chatbots Section -->
+      <section id="chatbots">
+          <h2 class="section-title">Chatbots</h2>
+          <h3>1. Definition:</h3>
+          <p>Chatbots are software applications designed to simulate human conversation. They interact with users through text or voice, providing information or performing tasks based on user inputs.</p>
+
+          <h3>2. Types:</h3>
+          <ul>
+              <li><strong>Rule-based Chatbots:</strong> Operate based on a set of predefined rules. They use if-then logic to respond to user inputs and are best suited for simple, structured interactions.</li>
+              <li><strong>AI-powered Chatbots:</strong> Utilize machine learning and natural language processing (NLP) to understand and generate human-like responses. They can handle more complex and varied interactions.</li>
+          </ul>
+
+          <h3>3. Key Technologies:</h3>
+          <ul>
+              <li><strong>Natural Language Processing (NLP):</strong> Helps chatbots understand and interpret human language.</li>
+              <li><strong>Machine Learning (ML):</strong> Enables chatbots to improve their responses over time based on interactions and data.</li>
+          </ul>
+
+          <h3>4. Applications:</h3>
+          <p>Customer support, virtual shopping assistants, booking systems, and more.</p>
+      </section>
+
+      <!-- Virtual Assistants Section -->
+      <section id="virtual-assistants">
+          <h2 class="section-title">Virtual Assistants</h2>
+          <h3>1. Definition:</h3>
+          <p>Virtual Assistants are more advanced AI systems designed to help users with a range of tasks. They can perform activities like managing schedules, setting reminders, answering questions, and more.</p>
+
+          <h3>2. Examples:</h3>
+          <ul>
+              <li><strong>Siri:</strong> Apple’s virtual assistant.</li>
+              <li><strong>Alexa:</strong> Amazon’s voice-activated assistant.</li>
+              <li><strong>Google Assistant:</strong> Google’s AI assistant.</li>
+          </ul>
+
+          <h3>3. Key Technologies:</h3>
+          <ul>
+              <li><strong>Voice Recognition:</strong> Converts spoken language into text.</li>
+              <li><strong>Contextual Understanding:</strong> Allows the assistant to understand and retain context across interactions.</li>
+              <li><strong>Integration with Services:</strong> Connects with other apps and services to perform tasks like controlling smart home devices, sending messages, or retrieving information.</li>
+          </ul>
+
+          <h3>4. Applications:</h3>
+          <p>Personal organization, home automation, information retrieval, and entertainment.</p>
+      </section>
+
+      <!-- Developing Section -->
+      <section id="developing">
+          <h2 class="section-title">Developing Chatbots and Virtual Assistants</h2>
+          <h3>1. Define Purpose:</h3>
+          <p>Clearly outline what you want the chatbot or virtual assistant to accomplish. This will guide the design and functionality.</p>
+
+          <h3>2. Choose a Platform:</h3>
+          <p>Platforms like Dialogflow, Microsoft Bot Framework, and Rasa can help in creating and managing chatbots.</p>
+
+          <h3>3. Design Conversations:</h3>
+          <p>Create conversation flows and responses. For rule-based systems, this involves mapping out possible user inputs and corresponding outputs.</p>
+
+          <h3>4. Train and Test:</h3>
+          <p>For AI-powered systems, training involves feeding the chatbot data and refining its responses. Testing is crucial to ensure it handles various scenarios appropriately.</p>
+
+          <h3>5. Deploy and Monitor:</h3>
+          <p>After deployment, continuously monitor interactions to improve performance and accuracy based on user feedback.</p>
+      </section>
+
+  </div>
+
+<!-- ################# Page Ends ##################-->                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  {% endblock %}

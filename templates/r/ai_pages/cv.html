@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+{%block title%}Computer Vision| ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <h1>Contact</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Computer Vision</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+        <!-- Reports -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">  
+<!-- ################# Page Starts ##################-->                  
+<!-- Page Start -->
+<div class="container">
+  <h1 class="text-center">Computer Vision Guide for Freshers</h1>
+
+  <!-- Introduction Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">1. Introduction to Computer Vision</h2>
+      </div>
+      <div class="card-body">
+          <p><strong>Definition:</strong> Computer Vision is a field of artificial intelligence that enables machines to interpret and understand visual information from the world, such as images and videos. It involves extracting meaningful information and making decisions based on visual data.</p>
+          <h4>Applications:</h4>
+          <ul class="list-group">
+              <li class="list-group-item">Image Classification</li>
+              <li class="list-group-item">Object Detection</li>
+              <li class="list-group-item">Image Segmentation</li>
+              <li class="list-group-item">Facial Recognition</li>
+              <li class="list-group-item">Video Analysis</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Prerequisites Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">2. Prerequisites</h2>
+      </div>
+      <div class="card-body">
+          <h4>Mathematics:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Linear Algebra:</strong> Understanding of matrices and operations is crucial for image transformations and deep learning.</li>
+              <li class="list-group-item"><strong>Calculus:</strong> Derivatives and integrals are important for understanding optimization in neural networks.</li>
+              <li class="list-group-item"><strong>Probability and Statistics:</strong> Concepts are used in image analysis and machine learning algorithms.</li>
+          </ul>
+          <h4>Programming:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Python:</strong> The primary language used in computer vision due to its extensive libraries and frameworks.</li>
+              <li class="list-group-item"><strong>C++:</strong> Often used in performance-critical applications and libraries like OpenCV.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Key Concepts Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">3. Key Concepts</h2>
+      </div>
+      <div class="card-body">
+          <h4>Basic Concepts:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Image Processing:</strong> Techniques for manipulating and analyzing images, such as filtering and transformation.</li>
+              <li class="list-group-item"><strong>Feature Detection:</strong> Identifying key points or regions in an image, such as edges or corners.</li>
+              <li class="list-group-item"><strong>Object Detection:</strong> Identifying and locating objects within an image.</li>
+              <li class="list-group-item"><strong>Image Segmentation:</strong> Dividing an image into segments or regions for easier analysis.</li>
+          </ul>
+          <h4>Advanced Concepts:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Convolutional Neural Networks (CNNs):</strong> Deep learning models designed for image recognition and classification.</li>
+              <li class="list-group-item"><strong>Transfer Learning:</strong> Using pre-trained models on new tasks to improve performance and reduce training time.</li>
+              <li class="list-group-item"><strong>Generative Adversarial Networks (GANs):</strong> Models that generate new data samples by learning from existing data.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Tools and Frameworks Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">4. Tools and Frameworks</h2>
+      </div>
+      <div class="card-body">
+          <h4>Libraries:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>OpenCV:</strong> An open-source library for computer vision tasks and real-time image processing.</li>
+              <li class="list-group-item"><strong>TensorFlow:</strong> A deep learning framework by Google with strong support for computer vision tasks.</li>
+              <li class="list-group-item"><strong>PyTorch:</strong> A deep learning framework by Facebook that is popular for research and computer vision.</li>
+              <li class="list-group-item"><strong>Keras:</strong> A high-level API for building and training deep learning models, often used with TensorFlow.</li>
+          </ul>
+          <h4>Development Environments:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Jupyter Notebook:</strong> An interactive environment for running and visualizing code.</li>
+              <li class="list-group-item"><strong>Google Colab:</strong> A cloud-based notebook with free GPU support for running computer vision experiments.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Data Handling Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">5. Data Handling</h2>
+      </div>
+      <div class="card-body">
+          <h4>Data Preparation:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Image Augmentation:</strong> Techniques to generate additional training images from existing ones (e.g., rotation, scaling).</li>
+              <li class="list-group-item"><strong>Data Annotation:</strong> Labeling images with relevant information for supervised learning tasks.</li>
+          </ul>
+          <h4>Libraries:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Pandas:</strong> Data manipulation and analysis.</li>
+              <li class="list-group-item"><strong>NumPy:</strong> Numerical operations on arrays.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Learning Resources Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">6. Learning Resources</h2>
+      </div>
+      <div class="card-body">
+          <h4>Online Courses:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Coursera:</strong> Computer Vision Specialization by the University of Michigan.</li>
+              <li class="list-group-item"><strong>edX:</strong> Introduction to Computer Vision with Python by IBM.</li>
+              <li class="list-group-item"><strong>Udacity:</strong> Computer Vision Nanodegree.</li>
+          </ul>
+          <h4>Books:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>“Computer Vision: Algorithms and Applications”</strong> by David L. Poole and Alan K. Mackworth.</li>
+              <li class="list-group-item"><strong>“Deep Learning for Computer Vision”</strong> by Rajalingappaa Shanmugamani.</li>
+              <li class="list-group-item"><strong>“Learning OpenCV 4”</strong> by Adrian Kaehler and Gary Bradski.</li>
+          </ul>
+          <h4>Blogs and Tutorials:</h4>
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Towards Data Science:</strong> Medium publication with articles on computer vision and related topics.</li>
+              <li class="list-group-item"><strong>Analytics Vidhya:</strong> Tutorials and resources on computer vision and data science.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Practical Experience Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">7. Practical Experience</h2>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Kaggle:</strong> Participate in computer vision competitions and explore datasets for hands-on practice.</li>
+              <li class="list-group-item"><strong>GitHub:</strong> Contribute to computer vision projects, explore repositories, and build your own projects.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Community and Networking Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">8. Community and Networking</h2>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Forums:</strong> Join forums like Stack Overflow, Reddit’s r/computervision for discussions and support.</li>
+              <li class="list-group-item"><strong>Meetups and Conferences:</strong> Attend computer vision-related events to network with professionals and stay updated on trends.</li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Ethical Considerations Section -->
+  <div class="card">
+      <div class="card-header">
+          <h2 class="section-title">9. Ethical Considerations</h2>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item"><strong>Bias and Fairness:</strong> Ensure computer vision models do not perpetuate or amplify existing biases.</li>
+              <li class="list-group-item"><strong>Privacy:</strong> Handle visual data responsibly and adhere to regulations like GDPR.</li>
+          </ul>
+      </div>
+  </div>
+</div>
+ <!-- Page End -->
+<!-- ################# Page Ends ##################-->                       
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+</div>
+</section>  
+{% endblock %}

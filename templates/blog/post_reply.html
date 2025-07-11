@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+    <div class="col-md-12 col-lg-10 col-xl-8">
+      <div class="card">
+        <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+          <img class="rounded-circle shadow-1-strong me-3"
+          src="/media/{{user.avatar}}" alt="avatar" width="40"
+          height="40" />
+          {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Post Reply</button>
+            </form>
+          {% else %}
+            <p>You must be logged in to post a comment.</p>
+          {% endif %}        
+        </div>
+      </div>
+    </div>
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+
+        <div class="card">
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li><a class="dropdown-item" href="#">Today</a></li>
+              <li><a class="dropdown-item" href="#">This Month</a></li>
+              <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+            <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                echarts.init(document.querySelector("#trafficChart")).setOption({
+                  tooltip: {
+                    trigger: 'item'
+                  },
+                  legend: {
+                    top: '5%',
+                    left: 'center'
+                  },
+                  series: [{
+                    name: 'AI Market Trend',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                      show: false,
+                      position: 'center'
+                    },
+                    emphasis: {
+                      label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                      }
+                    },
+                    labelLine: {
+                      show: false
+                    },
+                    data: [{
+                        "value": 1500,
+                        "name": "Healthcare"
+                      },
+                      {
+                        "value": 1300,
+                        "name": "Finance"
+                      },
+                      {
+                        "value": 1100,
+                        "name": "Retail"
+                      },
+                      {
+                        "value": 900,
+                        "name": "Automotive"
+                      },
+                      {
+                        "value": 800,
+                        "name": "Manufacturing"
+                      },
+                      {
+                        "value": 700,
+                        "name": "Telecommunications"
+                      },
+                      {
+                        "value": 600,
+                        "name": "Education"
+                      },
+                      {
+                        "value": 500,
+                        "name": "Energy"
+                      }
+                    ]
+                  }]
+                });
+              });
+
+            </script>
+
+          </div>
+        </div><!-- End Website Traffic -->        
+        <!-- News & Updates Traffic -->
+        <div class="card">
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li><a class="dropdown-item" href="#">Today</a></li>
+              <li><a class="dropdown-item" href="#">This Month</a></li>
+              <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+            <div class="news">
+              {% for t_article in t_articles %}
+              <div class="post-item clearfix">
+                <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+                <h4><a href="#">{{ t_article.title }}</a></h4>
+                <p>{{ article.excerpt }}</p>
+              </div>
+              {% endfor %}
+            </div><!-- End sidebar recent posts-->
+
+          </div>
+        </div><!-- End News & Updates -->
+
+      </div><!-- End Right side columns -->
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+
+<h1>Blog Management</h1>
+
+<!-- Article Form -->
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'create_article' %}" class="btn btn-secondary mt-5">Add Article</a>
+</div>  
+<!-- Articles List -->
+<h2>Articles</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Created At</th>
+            <th>Approved</th>
+            <th>Status</th>
+            <th>Delete</th>            
+            <th>Update</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+        <tr>
+            <td>{{ article.title }}</td>
+            <td>{{ article.content|truncatewords:10 }}</td>
+            <td>{{ article.created_at }}</td>
+            <td>{{ article.is_approved }}</td>
+            <td>
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="article_id" value="{{ article.id }}">
+                    {% if article.is_approved %}
+                        <button type="submit" name="disapprove_article" class="btn btn-warning btn-sm">Disapprove</button>
+                    {% else %}
+                        <button type="submit" name="approve_article" class="btn btn-success btn-sm">Approve</button>
+                    {% endif %}
+                </form>
+            </td>
+            <td>
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="article_id" value="{{ article.id }}">
+                    <button type="submit" name="delete_article" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+            <td>
+                <!-- For updating the article -->
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="article_id" value="{{ article.id }}">
+                    <button type="submit" name="update_article" class="btn btn-info btn-sm">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Comments List -->
+<h2>Comments</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Article</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Created At</th>
+            <th>Approved</th>
+            <th>Status</th>
+            <th>Delete</th>                      
+        </tr>
+    </thead>
+    <tbody>
+        {% for comment in comments %}
+        <tr>
+            <td>{{ comment.article.title }}</td>
+            <td>{{ comment.author.username }}</td>
+            <td>{{ comment.content|truncatewords:10 }}</td>
+            <td>{{ comment.created_at }}</td>
+            <td>{{ comment.is_approved }}</td>
+            <td>
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    {% if comment.is_approved %}
+                        <button type="submit" name="disapprove_comment" class="btn btn-warning btn-sm">Disapprove</button>
+                    {% else %}
+                        <button type="submit" name="approve_comment" class="btn btn-success btn-sm">Approve</button>
+                    {% endif %}
+                </form>
+            </td>
+            <td>
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    <button type="submit" name="delete_comment" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

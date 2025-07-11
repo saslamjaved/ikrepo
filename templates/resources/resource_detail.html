@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{%block title%}{{ resource.title }} | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <h1>Available Resources</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active"><a href="{% url 'resource_list' %}">Resources</a></li>
+      <li class="breadcrumb-item active">{{ resource.title }}/</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+<!-- Page Start -->
+
+ 
+<section class="section dashboard">
+  <div class="row">
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <row>
+              <div id="pdfCarousel" class="carousel slide rounded" style="width: 100%; height: auto;">
+                <div class="carousel-inner rounded" id="carouselInner">
+                  <!-- PDF pages will be injected here as canvas elements -->
+                </div>
+                <!-- Carousel navigation buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#pdfCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#pdfCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </row>
+      <div class="row">
+        <!-- Reports -->
+        <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ resource.title }}<span>/Today</span></h5>
+                {% for chapter in chapters %}
+                {% if selected_chapter and selected_chapter.slug == chapter.slug %}                
+                {% for lesson in lessons %}
+                <div class="row">
+                  <div  class="col-lg-12">
+                  {{ lesson.order }}.<b>{{ lesson.title }}</b>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 m-2">
+                  {{ lesson.content }}
+                  <hr>
+                  </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endfor %}                         
+              </div>  
+            </div>
+        </div><!-- End Reports -->
+      </div>
+    </div>  <!-- End Left side columns -->
+    <!-- Right side columns --> 
+    <div class="col-lg-4">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Chapters</span></h5>
+            <div class="activity">
+              {% for chapter in chapters %}
+                {% if user.is_authenticated %}
+                  {% if user_has_access %}
+                    <div class="activity-item d-flex">
+                      <div class="activite-label">{{ chapter.order }}</div>
+                      <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                      <div class="activity-content">
+                        <a class="toggle-sidebar-btn" href="{% url 'chapter_detail' chapter.slug %}">{{ chapter.title }} </a>
+                      </div>
+                    </div>
+                  {% else %}
+                    {% if chapter.is_free %}
+                    <div class="activity-item d-flex">
+                      <div class="activite-label">{{ chapter.order }}</div>
+                      <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                      <div class="activity-content">
+                        <a class="toggle-sidebar-btn" href="{% url 'chapter_detail' chapter.slug %}">{{ chapter.title }} </a>
+                      </div>
+                    </div>
+                    {% elif chapter.is_demo %}
+                    <div class="activity-item d-flex">
+                      <div class="activite-label">{{ chapter.order }}</div>
+                      <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                      <div class="activity-content">
+                        <a class="toggle-sidebar-btn" href="{% url 'chapter_detail' chapter.slug %}">{{ chapter.title }} </a>
+                      </div>
+                    </div>
+                    {% else %}                  
+                    <div class="activity-item d-flex">
+                      <div class="activite-label">{{ chapter.order }}</div>
+                      <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                      <div class="activity-content">
+                        <a class="toggle-sidebar-btn" href="{% url 'subscription_plans' %}">{{ chapter.title }} </a>
+                      </div>
+                    </div>  
+                    {% endif %}                  
+                  {% endif %}
+                {% else %}
+                  <a class="toggle-sidebar-btn" href="{% url 'users:login' %}">{{ chapter.title }} </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div><!-- End Recent Activity -->
+    </div> <!-- End Right side columns -->  
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<script>
+  const url = '/media/pdfs/{{chapter.file_name}}';  // Path to your PDF file
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+  // Load PDF
+  pdfjsLib.getDocument(url).promise.then(function(pdf) {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          pdf.getPage(pageNum).then(function(page) {
+              const scale = 1;  // Initial scale for larger screens
+              const viewport = page.getViewport({ scale: scale });
+
+              // Create canvas element
+              const canvas = document.createElement('canvas');
+              const context = canvas.getContext('2d');
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+
+              // Append canvas to carousel slide
+              const carouselItem = document.createElement('div');
+              carouselItem.className = pageNum === 1 ? 'carousel-item active' : 'carousel-item';
+              carouselItem.appendChild(canvas);
+              document.getElementById('carouselInner').appendChild(carouselItem);
+
+              // Render PDF page into canvas context
+              page.render({
+                  canvasContext: context,
+                  viewport: viewport
+              });
+
+              // Adjust canvas size dynamically for responsive design
+              function resizeCanvas() {
+                  const containerWidth = document.getElementById('pdfCarousel').offsetWidth;
+                  const scaleFactor = containerWidth / viewport.width; // Scale factor based on container width
+
+                  canvas.style.width = `${viewport.width * scaleFactor}px`;
+                  canvas.style.height = `${viewport.height * scaleFactor}px`;
+              }
+
+              // Initial call and event listener for resizing
+              resizeCanvas();
+              window.addEventListener('resize', resizeCanvas);
+          });
+      }
+  });
+</script>
+
+
+{% endblock %}

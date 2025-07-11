@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{%block title%}Blog | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Blog | AI Learning Hub</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+ <section class="section dashboard">
+  <div class="row">
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <!-- Page Start -->
+              <!-- Tabs navs -->
+              <ul class="nav nav-tabs mb-2" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link active text-bg-primary m-2 p-3"
+                    id="ex1-tab-1"
+                    href="{% url 'ai_home' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-1"
+                    aria-selected="true"
+                    >AI Home</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-success m-2 p-3"
+                    id="ex1-tab-2"
+                    href="{% url 'ai_learn' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-2"
+                    aria-selected="false"
+                    >Learn AI</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    data-mdb-tab-init
+                    class="nav-link text-bg-danger m-2 p-3"
+                    id="ex1-tab-3"
+                    href="{% url 'ai_projects' %}"
+                    role="tab"
+                    aria-controls="ex1-tabs-3"
+                    aria-selected="false"
+                    >Projects</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-warning m-2 p-3"
+                      id="ex1-tab-4"
+                      href="{% url 'ai_resources' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-4"
+                      aria-selected="false"
+                      >Resources</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      data-mdb-tab-init
+                      class="nav-link text-bg-info m-2 p-3"
+                      id="ex1-tab-5"
+                      href="{% url 'ai_blogs' %}"
+                      role="tab"
+                      aria-controls="ex1-tabs-5"
+                      aria-selected="false"
+                      >Blogs</a>
+                  </li>               
+              </ul>
+              <!-- Tabs navs -->
+              <!-- Tabs content -->
+              <div class="tab-content" id="ex1-content">
+                <div
+                  class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                    <!-- Main Content -->
+                    <main class="container my-5">
+                      <div class="jumbotron">
+                          <h2 class="display-4">Top AI Blogs for Research and Updates</h2>
+                          <p class="lead">Stay updated with the latest advancements and ongoing research in AI by following these top blogs. These resources provide insightful articles, research summaries, and expert opinions on cutting-edge AI topics.</p>
+                      </div>
+              
+                      <div class="row">
+                          <!-- AI Research Blog -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">AI Research Blog</h5>
+                                      <p class="card-text">AI Research Blog offers summaries and discussions on the latest academic papers and research breakthroughs in artificial intelligence. It’s a great resource for understanding complex research topics in simpler terms.</p>
+                                      <a href="https://www.airesearchblog.com" class="btn btn-primary" target="_blank">Visit AI Research Blog</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- Towards Data Science -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">Towards Data Science</h5>
+                                      <p class="card-text">Towards Data Science provides accessible articles and tutorials on AI, machine learning, and data science. It covers recent advancements, practical guides, and the latest trends in a beginner-friendly manner.</p>
+                                      <a href="https://towardsdatascience.com" class="btn btn-primary" target="_blank">Visit Towards Data Science</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- DeepMind Blog -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">DeepMind Blog</h5>
+                                      <p class="card-text">DeepMind’s blog provides insights into their latest research and innovations in artificial intelligence. The blog covers topics from reinforcement learning to neural networks, making it a valuable resource for learning about cutting-edge AI research.</p>
+                                      <a href="https://deepmind.com/blog" class="btn btn-primary" target="_blank">Visit DeepMind Blog</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              
+                      <div class="row">
+                          <!-- OpenAI Blog -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">OpenAI Blog</h5>
+                                      <p class="card-text">OpenAI’s blog shares updates on their research, including advancements in language models like GPT-3 and AI ethics. It’s an excellent resource for staying informed about the latest developments in the field of AI.</p>
+                                      <a href="https://www.openai.com/blog" class="btn btn-primary" target="_blank">Visit OpenAI Blog</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- AI Weekly -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">AI Weekly</h5>
+                                      <p class="card-text">AI Weekly provides a curated list of the latest articles, papers, and news in artificial intelligence. It’s a great way to keep up with important research updates and trends in the AI community.</p>
+                                      <a href="https://aiweekly.co" class="btn btn-primary" target="_blank">Visit AI Weekly</a>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <!-- The AI Alignment Forum -->
+                          <div class="col-md-4 mb-4">
+                              <div class="card">
+                                  
+                                  <div class="card-body">
+                                      <h5 class="card-title">The AI Alignment Forum</h5>
+                                      <p class="card-text">The AI Alignment Forum focuses on discussions and research about ensuring that AI systems align with human values and goals. It’s a valuable resource for those interested in the ethical and safety aspects of AI development.</p>
+                                      <a href="https://www.alignmentforum.org" class="btn btn-primary" target="_blank">Visit The AI Alignment Forum</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </main>
+                </div>
+                
+              </div>
+              <!-- Tabs content -->
+              <!-- Page End -->
+            </div>        
+          </div>
+        </div>        
+      </div>
+    </div>
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+
+          <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              echarts.init(document.querySelector("#trafficChart")).setOption({
+                tooltip: {
+                  trigger: 'item'
+                },
+                legend: {
+                  top: '5%',
+                  left: 'center'
+                },
+                series: [{
+                  name: 'AI Market Trend',
+                  type: 'pie',
+                  radius: ['40%', '70%'],
+                  avoidLabelOverlap: false,
+                  label: {
+                    show: false,
+                    position: 'center'
+                  },
+                  emphasis: {
+                    label: {
+                      show: true,
+                      fontSize: '18',
+                      fontWeight: 'bold'
+                    }
+                  },
+                  labelLine: {
+                    show: false
+                  },
+                  data: [{
+                      "value": 1500,
+                      "name": "Healthcare"
+                    },
+                    {
+                      "value": 1300,
+                      "name": "Finance"
+                    },
+                    {
+                      "value": 1100,
+                      "name": "Retail"
+                    },
+                    {
+                      "value": 900,
+                      "name": "Automotive"
+                    },
+                    {
+                      "value": 800,
+                      "name": "Manufacturing"
+                    },
+                    {
+                      "value": 700,
+                      "name": "Telecommunications"
+                    },
+                    {
+                      "value": 600,
+                      "name": "Education"
+                    },
+                    {
+                      "value": 500,
+                      "name": "Energy"
+                    }
+                  ]
+                }]
+              });
+            });
+
+          </script>
+
+        </div>
+      </div><!-- End Website Traffic -->  
+
+      <!-- News & Updates Traffic -->
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body pb-0">
+          <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+
+          <div class="news">
+            {% for t_article in t_articles %}
+            {% if t_article.is_approved %}
+            <div class="post-item clearfix">
+              <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+              <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+              <p>{{ article.excerpt }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div><!-- End sidebar recent posts-->
+
+        </div>
+      </div><!-- End News & Updates -->
+
+    </div><!-- End Right side columns -->    
+  </div>
+</section>
+{% endblock %}

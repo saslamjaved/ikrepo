@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{%block title%}Available Resources{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active">Resources</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+<!-- Page Start -->
+<div class="row row-cols-md-3">
+{% if resources %}
+  {% for resource in resources %}
+  <div class="col col-lg-4 p-2">
+    <div class="card h-100">
+      <div class="card-body">
+        <a href="{% url 'tl_detail' slug=resource.slug %}">
+          <h5 class="card-title">{{ resource.title }}</h5>
+      </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <p>No resources available for your current subscription level.</p>
+{% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Courses</h5>
+          <!-- Table with stripped rows 
+          <table class="table datatable">
+            <thead>
+              <tr>
+                <th>Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for resource in user_resources %}
+              <tr>
+                <td><a href="{% url 'resource_detail' resource.slug%}">{{ resource.title }}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- End Table with stripped rows 
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">All available courses</h5>
+          <!-- Table with stripped rows
+          <table class="table datatable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Subscription</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for resource in resources %}
+              <tr>
+                <td><a href="{% url 'resource_detail' resource.slug %}">{{ resource.title }}</a></td>
+                <td><a href="#" class="text-primary">{{ resource.minimum_subscription_plan|default:"Free" }}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- End Table with stripped rows
+
+        </div>
+      </div>
+
+    </div>
+  </div> 
+</section>
+ <!-- Page End -->
+ {% endblock %}

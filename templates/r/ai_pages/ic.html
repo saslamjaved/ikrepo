@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{%block title%}Image Classification | ikSaan.com the AI Learning Hub{% endblock %}
+{% load static %}
+{% block main %}
+  <div class="pagetitle">
+    <h1>About us</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Image Classification</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+        <div class="col-lg-8">
+            <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">  
+<!-- ################# Page Starts ##################-->
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+      <div class="container">
+          <h1 class="display-4">Learn Image Classification</h1>
+          <p class="lead">Unlock the Power of Image Recognition</p>
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+      <div class="container">
+          <h2 class="display-5">Welcome to our comprehensive guide on image classification!</h2>
+          <p class="lead">Image classification is a critical task in computer vision, enabling systems to categorize and label images based on their content. Whether you’re new to the field or looking to deepen your knowledge, this page will guide you through the essentials of image classification and provide you with the tools to start building your own models.</p>
+      </div>
+  </section>
+
+  <!-- What is Image Classification Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>What is Image Classification?</h2>
+          <h3>Definition:</h3>
+          <p>Image Classification is the process of assigning a label to an image based on its visual content. It involves training a model to recognize and categorize objects within images.</p>
+          <h3>Applications:</h3>
+          <ul>
+              <li><strong>Object Recognition:</strong> Identifying objects in photos, such as vehicles, animals, or landmarks.</li>
+              <li><strong>Medical Imaging:</strong> Detecting anomalies in medical images, such as tumors in X-rays or MRIs.</li>
+              <li><strong>Facial Recognition:</strong> Classifying and recognizing faces in security and authentication systems.</li>
+              <li><strong>Autonomous Vehicles:</strong> Helping self-driving cars understand and interpret their surroundings.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- How Image Classification Works Section -->
+  <section class="section">
+      <div class="container">
+          <h2>How Image Classification Works</h2>
+          <h3>1. Image Preprocessing:</h3>
+          <ul>
+              <li><strong>Resizing:</strong> Adjusting the dimensions of images to a standard size for consistent input to the model.</li>
+              <li><strong>Normalization:</strong> Scaling pixel values to a range suitable for the model, typically 0 to 1.</li>
+          </ul>
+          <h3>2. Feature Extraction:</h3>
+          <ul>
+              <li><strong>Manual Feature Extraction:</strong> Identifying and using specific features or patterns in the images.</li>
+              <li><strong>Automated Feature Extraction:</strong> Using neural networks to automatically learn and extract features from raw images.</li>
+          </ul>
+          <h3>3. Model Training:</h3>
+          <ul>
+              <li><strong>Convolutional Neural Networks (CNNs):</strong> The most common type of neural network used for image classification, designed to automatically and adaptively learn spatial hierarchies of features from images.</li>
+              <li><strong>Transfer Learning:</strong> Utilizing pre-trained models on large datasets to improve classification accuracy on smaller, specific datasets.</li>
+          </ul>
+          <h3>4. Evaluation and Testing:</h3>
+          <ul>
+              <li><strong>Accuracy:</strong> Measuring how often the model correctly classifies images.</li>
+              <li><strong>Confusion Matrix:</strong> A tool to visualize the performance of the classification model, showing the true positives, false positives, true negatives, and false negatives.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Learning Resources Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Learning Resources</h2>
+          <h3>1. Introduction to Image Classification</h3>
+          <ul>
+              <li>What is Image Classification? Basic concepts and definitions.</li>
+              <li>How It Works: Detailed explanation of the image classification process.</li>
+          </ul>
+          <h3>2. Getting Started with Image Classification</h3>
+          <ul>
+              <li>Tutorials: Step-by-step guides on building simple image classification models using popular libraries and frameworks such as TensorFlow, Keras, and PyTorch.</li>
+              <li>Example Projects: Hands-on projects to practice image classification, such as classifying handwritten digits with MNIST or recognizing animals in CIFAR-10.</li>
+          </ul>
+          <h3>3. Advanced Topics</h3>
+          <ul>
+              <li>Deep Learning Architectures: Explore advanced CNN architectures like ResNet, VGG, and Inception that improve classification performance.</li>
+              <li>Data Augmentation: Techniques to artificially increase the diversity of your training data by applying transformations like rotation, scaling, and flipping.</li>
+          </ul>
+          <h3>4. Tools and Libraries</h3>
+          <ul>
+              <li><strong>TensorFlow:</strong> An open-source library for machine learning that includes tools for image classification.</li>
+              <li><strong>Keras:</strong> A high-level neural networks API that runs on top of TensorFlow, providing an easy-to-use interface for building models.</li>
+              <li><strong>PyTorch:</strong> An open-source machine learning library that offers flexibility and speed for building image classification models.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Practical Applications Section -->
+  <section class="section">
+      <div class="container">
+          <h2>Practical Applications</h2>
+          <h3>1. Building Your First Image Classifier</h3>
+          <ul>
+              <li>Tutorial: Follow our beginner-friendly tutorial to create a basic image classifier from scratch.</li>
+              <li>Code Examples: Access sample code for various image classification models and techniques.</li>
+          </ul>
+          <h3>2. Real-World Case Studies</h3>
+          <ul>
+              <li><strong>Retail:</strong> How image classification is used for product recognition and inventory management.</li>
+              <li><strong>Healthcare:</strong> Applications in detecting and diagnosing medical conditions from imaging data.</li>
+          </ul>
+          <h3>3. Challenges and Competitions</h3>
+          <ul>
+              <li>Kaggle: Participate in image classification competitions to test your skills and learn from others in the community.</li>
+              <li>Online Challenges: Engage in challenges to improve your model-building capabilities and gain practical experience.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Resources and Further Reading Section -->
+  <section class="section bg-light">
+      <div class="container">
+          <h2>Resources and Further Reading</h2>
+          <ul>
+              <li>Books: Recommended books for in-depth knowledge on image classification and computer vision.</li>
+              <li>Online Courses: Enroll in courses and certifications to gain structured learning and hands-on experience.</li>
+              <li>Communities and Forums: Join communities and forums to discuss image classification, share your work, and seek advice from experts.</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="section text-center">
+      <div class="container">
+          <h2>Get Started with Image Classification</h2>
+          <p>Ready to dive into image classification? Start by exploring our tutorials and resources, and begin building your own models today!</p>
+          <p><a class="btn btn-primary" href="{%url 'users:register' %}">Sign Up for Updates</a></p>
+          <p>Connect with Us: Join our community forums and follow us on social media for more insights and discussions on computer vision and AI.</p>
+      </div>
+  </section>
+<!-- ################# Page Ends ##################-->                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right side columns -->
+<div class="col-lg-4">
+
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">AI Market Trend <span>| Today</span></h5>
+  
+        <div id="trafficChart" style="min-height: 500px;" class="echart"></div>
+  
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#trafficChart")).setOption({
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                top: '5%',
+                left: 'center'
+              },
+              series: [{
+                name: 'AI Market Trend',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: '18',
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [{
+                    "value": 1500,
+                    "name": "Healthcare"
+                  },
+                  {
+                    "value": 1300,
+                    "name": "Finance"
+                  },
+                  {
+                    "value": 1100,
+                    "name": "Retail"
+                  },
+                  {
+                    "value": 900,
+                    "name": "Automotive"
+                  },
+                  {
+                    "value": 800,
+                    "name": "Manufacturing"
+                  },
+                  {
+                    "value": 700,
+                    "name": "Telecommunications"
+                  },
+                  {
+                    "value": 600,
+                    "name": "Education"
+                  },
+                  {
+                    "value": 500,
+                    "name": "Energy"
+                  }
+                ]
+              }]
+            });
+          });
+  
+        </script>
+  
+      </div>
+    </div><!-- End Website Traffic -->  
+  
+    <!-- News & Updates Traffic -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+  
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+  
+      <div class="card-body pb-0">
+        <h5 class="card-title">Trending Articles <span>| Today</span></h5>
+  
+        <div class="news">
+          {% for t_article in t_articles %}
+          {% if t_article.is_approved %}
+          <div class="post-item clearfix">
+            <img src="/media/{{ t_article.thumbnail }}" class="img-thumbnail rounded" alt="">
+            <h4><a href="{% url 'article_detail' t_article.slug %}">{{ t_article.title }}</a></h4>
+            <p>{{ article.excerpt }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div><!-- End sidebar recent posts-->
+  
+      </div>
+    </div><!-- End News & Updates -->
+  
+  </div><!-- End Right side columns -->
+    </div>
+</section>
+
+
+
+
+  {% endblock %}

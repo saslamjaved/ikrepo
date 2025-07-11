@@ -1,0 +1,180 @@
+{% load static %}
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+  <!--<a class="p-4" href="{%url 'users:register' %}"> -->
+  <a class="p-4" href="{%url 'subscription_plans' %}">    
+    <button type="button" class="btn btn-danger">Enroll Now</button>
+  </a>
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#home-nav" data-bs-toggle="collapse" href="{% url 'ai_home' %}">
+        <i class="bi bi-house-fill"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="home-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'ai_home' %}">
+            <i class="bi bi-circle"></i><span>Home</span>
+          </a>
+        </li>
+        {% if user.is_superuser %}
+        <li>
+          <a href="{% url 'ccg' %}">
+            <i class="bi bi-circle"></i><span>Career Counseling and Guidance</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </li><!-- End Home Nav -->   
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#learnai-nav" data-bs-toggle="collapse" href="{% url 'ai_learn' %}">
+        <i class="fas fa-university"></i><span>Learn AI</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="learnai-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'ai_learn' %}">
+            <i class="bi bi-circle"></i><span>Fundamentals</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'ml' %}">
+            <i class="bi bi-circle"></i><span>Machine Learning</span>
+          </a>
+        </li>    
+        <li>
+          <a href="{% url 'dl' %}">
+            <i class="bi bi-circle"></i><span>Deep Learning</span>
+          </a>
+        </li>   
+        <li>
+          <a href="{% url 'nlp' %}">
+            <i class="bi bi-circle"></i><span>Natural Language Processing</span>
+          </a>
+        </li>  
+        <li>
+          <a href="{% url 'cv' %}">
+            <i class="bi bi-circle"></i><span>Computer Vision</span>
+          </a>
+        </li>                               
+        
+      </ul>
+    </li><!-- End Learn AI Nav -->       
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#project_tutorials-nav" data-bs-toggle="collapse" href="{% url 'ai_projects' %}">
+        <i class="bi bi-person-fill-gear"></i><span>Projects and Tutorials</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="project_tutorials-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'ai_projects' %}">
+            <i class="bi bi-circle"></i><span>Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'ai_tutorials' %}">
+            <i class="bi bi-circle"></i><span>Tutorials</span>
+          </a>
+        </li>  
+        <!--
+        <li>
+          <a href="#">
+            <i class="bi bi-circle"></i><span>Intermediate Projects</span>
+          </a>
+        </li>    
+        <li>
+          <a href="#">
+            <i class="bi bi-circle"></i><span>Interactive Tutorials</span>
+          </a>
+        </li>
+        -->                                     
+      </ul>
+    </li><!-- End Projects and Tutorials Nav -->         
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#resources-nav" data-bs-toggle="collapse" href="{% url 'ai_resources' %}">
+        <i class="bi bi-boxes"></i><span>Resources</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="resources-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'resource_list' %}">
+            <i class="bi bi-circle"></i><span>Resources</span>
+          </a>
+        </li>        
+        <li>
+          <a href="{% url 'ai_resources' %}">
+            <i class="bi bi-circle"></i><span>Datasets</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'tnfArticle' %}">
+            <i class="bi bi-circle"></i><span>Tools and Frameworks</span>
+          </a>
+        </li>    
+        <li>
+          <a href="{% url 'code_repoArticle' %}">
+            <i class="bi bi-circle"></i><span>Code Repositories</span>
+          </a>
+        </li>   
+        <li></li>
+          <a href="{% url 'ai_test' %}">
+            <i class="bi bi-circle"></i><span>test</span>
+          </a>
+        </li>                                          
+      </ul>
+    </li><!-- End Resources Nav -->       
+       
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#blog-nav" data-bs-toggle="collapse" href="{% url 'ai_blogs' %}">
+        <i class="bi bi-postcard-fill"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="blog-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'ai_blogs' %}">
+            <i class="bi bi-circle"></i><span>Articles</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-circle"></i><span>Interviews</span>
+          </a>
+        </li>                                        
+      </ul>
+    </li><!-- End Blog Nav -->     
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#aboutus-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span>About Us</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="aboutus-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{%url 'aboutus' %}">
+            <i class="bi bi-circle"></i><span>About us</span>
+          </a>
+        </li>  
+        <li>
+          <a href="{%url 'contactus' %}">
+            <i class="bi bi-circle"></i><span>Contact Information</span>
+          </a>
+        </li>                                                          
+      </ul>
+    </li><!-- End About Us Nav -->
+    {% if user.is_superuser %}  
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#admin-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-person-fill-lock"></i><span>Admin</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="admin-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'blog_mgmt' %}">
+            <i class="bi bi-circle"></i><span>Blog Mgmt</span>
+          </a>
+        </li> 
+        <li>
+          <a href="{% url 'tr_list' %}">
+            <i class="bi bi-circle"></i><span>tr</span>
+          </a>
+        </li>             
+      </ul>
+    </li><!-- End Admin Nav -->
+    {% endif %}                          
+  </ul>
+</aside>
+<!-- End Sidebar-->
+           
+

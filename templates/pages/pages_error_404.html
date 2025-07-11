@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block title%}Pages / Not Found 404 - ikSaan.com{% endblock %}
+{% load static %}
+{% block main %}
+  <title>Pages / Not Found 404 - ikSaan.com</title>
+  <main>
+    <div class="container">
+
+      <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+        <h1>404</h1>
+        <h2>The page you are looking for doesn't exist.</h2>
+        <a class="btn" href="{% url 'home' %}">Back to home</a>
+        <img src="{% static 'assets/img/not-found.jpg' %}" class="img-fluid py-5" alt="Page Not Found">
+        <div class="credits">
+          Designed by <a href="https://ikSaan.com.com/">ikSaan.com</a>
+        </div>
+      </section>
+    </div>
+  </main><!-- End #main -->
+  {% endblock %}
