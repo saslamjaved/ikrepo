@@ -4,6 +4,7 @@ autobahn==24.4.2
 Automat==24.8.1
 beautifulsoup4==4.12.3
 certifi==2024.8.30
+celery
 cffi==1.17.0
 channels==4.1.0
 charset-normalizer==3.3.2
